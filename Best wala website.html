@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meri Virasat — Our Heritage, Our Pride</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss-browser/4.3.2/index.global.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style type="text/tailwindcss">
+  @theme {
+    --color-sand: #FDFBF7;
+    --color-sand2: #F6EFE2;
+    --color-espresso: #2B1E19;
+    --color-terracotta: #9E3B1B;
+    --color-terracotta2: #B84A24;
+    --color-marigold: #D9A441;
+    --color-teal: #1B6B63;
+    --color-warli: #3B2A1E;
+    --color-warliText: #F1E6D8;
+    --font-serif: 'Fraunces', serif;
+    --font-body: 'Mukta', sans-serif;
+  }
+</style>
+<style>
+  html { scroll-behavior: smooth; }
+  body { background:#FDFBF7; color:#2B1E19; font-family:'Mukta', sans-serif; }
+  h1,h2,h3,h4, .font-display { font-family:'Fraunces', serif; }
+
+  /* traditional dotted/tribal rule */
+  .kolam-rule {
+    height: 6px;
+    background-image: radial-gradient(circle, #B84A24 1.4px, transparent 1.6px);
+    background-size: 10px 6px;
+    background-repeat: repeat-x;
+    opacity: .55;
+  }
+
+  .paper-texture {
+    background-image:
+      radial-gradient(#00000006 1px, transparent 1px),
+      radial-gradient(#00000005 1px, transparent 1px);
+    background-size: 22px 22px, 22px 22px;
+    background-position: 0 0, 11px 11px;
+  }
+
+  /* card hover: single deliberate motion */
+  .heritage-card { transition: transform .35s ease, box-shadow .35s ease; }
+  .heritage-card:hover { transform: translateY(-6px); box-shadow: 0 18px 30px -14px rgba(43,30,25,.35); }
+  .heritage-card-media { position:relative; overflow:hidden; height:180px; }
+  .heritage-card-media img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s ease, filter .5s ease; }
+  .heritage-card:hover .heritage-card-media img { transform:scale(1.06); filter:saturate(1.08); }
+  .image-overlay { position:absolute; inset:0; background:linear-gradient(to top, rgba(43,30,25,.68), rgba(43,30,25,.04) 60%, transparent); }
+  .hero-photo { min-height:390px; background-size:cover; background-position:center; box-shadow:0 22px 45px -24px rgba(43,30,25,.5); }
+  .modal-art { width:100%; height:230px; object-fit:cover; border-radius:16px; border:1px solid rgba(43,30,25,.1); }
+  .detail-art-wrap { display:grid; grid-template-columns:minmax(0,1fr) 180px; gap:20px; align-items:start; }
+  @media (max-width:640px){ .detail-art-wrap{grid-template-columns:1fr;} .hero-photo{min-height:300px;} .heritage-card-media{height:165px;} }
+
+  .tab-underline { position:relative; }
+  .tab-underline::after{
+    content:''; position:absolute; left:0; right:0; bottom:-2px; height:3px;
+    background:#9E3B1B; transform:scaleX(0); transform-origin:left; transition:transform .3s ease;
+  }
+  .tab-underline.active::after{ transform:scaleX(1); }
+  .tab-underline.active{ color:#9E3B1B; }
+
+  /* risk meter */
+  .risk-arc-bg { stroke:#EADFCB; }
+  .risk-arc-fg { stroke-linecap:round; transition: stroke-dashoffset 1s cubic-bezier(.65,0,.35,1); }
+
+  /* modal frame themes */
+  .frame-default { border: 10px solid #9E3B1B33; }
+  .frame-madhubani {
+    border: 14px solid transparent;
+    border-image-slice: 24;
+    border-image-width: 14px;
+    border-image-repeat: round;
+    border-image-source: repeating-linear-gradient(45deg, #B84A24 0 8px, #D9A441 8px 16px, #1B6B63 16px 24px, #FDFBF7 24px 28px);
+  }
+  .frame-warli { border: 14px solid #3B2A1E; background-color:#453325; }
+  .frame-warli .modal-inner-text { color:#F1E6D8; }
+
+  .warli-strip {
+    height: 34px;
+    background-color:#3B2A1E;
+    background-image: radial-gradient(#F1E6D8 2px, transparent 2px);
+    background-size: 26px 26px;
+    background-position: 6px 8px;
+  }
+
+  .madhubani-strip {
+    height: 12px;
+    background: repeating-linear-gradient(90deg, #B84A24 0 14px, #D9A441 14px 28px, #1B6B63 28px 42px);
+  }
+
+  .section-kicker{font-size:.72rem;text-transform:uppercase;letter-spacing:.16em;font-weight:800;color:#9E3B1B;margin-bottom:.45rem}
+  .category-nav{scrollbar-width:none}.category-nav::-webkit-scrollbar{display:none}
+  .category-chip{flex:0 0 auto;border:1px solid rgba(43,30,25,.12);background:#fff;color:#2B1E19;padding:.58rem .9rem;border-radius:999px;font-size:.82rem;font-weight:700;transition:.2s ease}
+  .category-chip:hover{transform:translateY(-1px);border-color:var(--cat-accent,#9E3B1B)}
+  .category-chip.active{background:var(--cat-accent,#9E3B1B);color:#fff;border-color:var(--cat-accent,#9E3B1B);box-shadow:0 8px 20px -12px var(--cat-accent,#9E3B1B)}
+  .region-place-btn{position:relative;min-height:142px;border:1px solid rgba(43,30,25,.12);border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 8px 22px -18px rgba(43,30,25,.45);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;text-align:left}
+  .region-place-btn:hover{transform:translateY(-5px);box-shadow:0 18px 30px -18px rgba(43,30,25,.5);border-color:#9E3B1B66}
+  .region-place-btn .region-photo{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .45s ease;}
+  .region-place-btn:hover .region-photo{transform:scale(1.05)}
+  .region-place-btn .region-shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(43,30,25,.82),rgba(43,30,25,.12) 70%,transparent)}
+  .region-place-btn .region-copy{position:absolute;left:12px;right:12px;bottom:11px;color:#FDFBF7}
+  .region-place-btn .region-pin{width:30px;height:30px;border-radius:50%;background:rgba(253,251,247,.9);color:#9E3B1B;display:flex;align-items:center;justify-content:center;margin-bottom:28px;box-shadow:0 5px 12px -7px rgba(0,0,0,.5)}
+  .all-section-note{border-left:3px solid #D9A441;padding-left:12px}
+
+  .showcase-card{border-radius:18px;overflow:hidden;border:1px solid rgba(43,30,25,.10);background:#fff;cursor:pointer;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+  .showcase-card:hover{transform:translateY(-5px);box-shadow:0 18px 34px -18px rgba(43,30,25,.35);border-color:var(--cat-accent,#9E3B1B)}
+  .showcase-photo{height:210px;position:relative;overflow:hidden;background:#eee}
+  .showcase-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+  .showcase-card:hover .showcase-photo img{transform:scale(1.05)}
+  .theme-band{height:5px;background:var(--cat-accent,#9E3B1B)}
+  .theme-folk-songs{--cat-accent:#7B3F8C}.theme-folk-dances{--cat-accent:#C23B6D}.theme-recipes-food{--cat-accent:#4F7D3B}.theme-childhood-games{--cat-accent:#2C7A9B}.theme-temples{--cat-accent:#B8751B}.theme-churches{--cat-accent:#4567A8}.theme-mosques{--cat-accent:#2F7B73}.theme-gurudwaras{--cat-accent:#C99820}.theme-old-places{--cat-accent:#80634D}.theme-forts-palaces{--cat-accent:#9B4C24}.theme-folk-art{--cat-accent:#B24A2A}.theme-crafts-handicrafts{--cat-accent:#56843D}.theme-festivals-rituals{--cat-accent:#A42B58}.theme-folk-theatre{--cat-accent:#6B4E8C}.theme-traditional-clothing{--cat-accent:#A24774}.theme-oral-stories-legends{--cat-accent:#76543C}.theme-languages-dialects{--cat-accent:#39748C}.theme-music-instruments{--cat-accent:#40577A}.theme-architecture{--cat-accent:#6C5039}.theme-nature-sacred-landscapes{--cat-accent:#3D7654}
+  .theme-frame{border-color:color-mix(in srgb,var(--cat-accent,#9E3B1B) 28%, transparent)}
+  .step-dot { transition: all .3s ease; }
+
+  .toast-enter { animation: toastIn .4s ease forwards; }
+  @keyframes toastIn { from { opacity:0; transform: translateY(16px) translateX(-50%);} to {opacity:1; transform: translateY(0) translateX(-50%);} }
+
+  .mandala-spin { animation: spinSlow 40s linear infinite; }
+  @keyframes spinSlow { from { transform: rotate(0deg);} to { transform: rotate(360deg);} }
+
+  .hotspot { cursor:pointer; transition: r .25s ease, filter .25s ease; }
+  .hotspot:hover { filter: brightness(1.15); }
+
+  input:focus, select:focus, textarea:focus, button:focus-visible, a:focus-visible {
+    outline: 2px solid #9E3B1B; outline-offset: 2px;
+  }
+
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-thumb { background:#D9A44188; border-radius:8px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+  }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- ================= NAVBAR ================= -->
+<header class="sticky top-0 z-40 bg-sand/95 backdrop-blur border-b border-espresso/10">
+  <div class="kolam-rule"></div>
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center gap-4">
+    <a href="#home" class="flex items-center gap-2 shrink-0">
+      <svg width="34" height="34" viewBox="0 0 40 40" class="mandala-spin">
+        <circle cx="20" cy="20" r="18" fill="none" stroke="#9E3B1B" stroke-width="1.4"/>
+        <circle cx="20" cy="20" r="12" fill="none" stroke="#D9A441" stroke-width="1.2"/>
+        <g stroke="#B84A24" stroke-width="1.2">
+          <line x1="20" y1="2" x2="20" y2="38"/><line x1="2" y1="20" x2="38" y2="20"/>
+          <line x1="6.8" y1="6.8" x2="33.2" y2="33.2"/><line x1="33.2" y1="6.8" x2="6.8" y2="33.2"/>
+        </g>
+        <circle cx="20" cy="20" r="4" fill="#1B6B63"/>
+      </svg>
+      <div class="leading-tight">
+        <p class="font-display font-semibold text-lg text-espresso">Meri Virasat</p>
+        <p class="text-[10px] tracking-wide text-terracotta -mt-1">Our Heritage · Our Pride</p>
+      </div>
+    </a>
+
+    <div class="hidden lg:flex items-center gap-6 ml-6 text-[15px] font-medium text-espresso/80">
+      <a href="#explore" class="hover:text-terracotta transition-colors">Home</a>
+      <a href="#explore" class="hover:text-terracotta transition-colors">Explore</a>
+      <a href="#categories" class="hover:text-terracotta transition-colors">Categories</a>
+      <a href="#map" class="hover:text-terracotta transition-colors">Artisans</a>
+      <a href="#stories" class="hover:text-terracotta transition-colors">Stories</a>
+      <a href="#about" class="hover:text-terracotta transition-colors">About</a>
+      <a href="#contact" class="hover:text-terracotta transition-colors">Contact</a>
+    </div>
+
+    <div class="flex-1 max-w-md ml-auto relative">
+      <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-espresso/40 text-sm"></i>
+      <input id="globalSearch" type="text" placeholder="Search heritage, place, tradition..."
+        class="w-full bg-sand2 border border-espresso/10 rounded-full pl-9 pr-3 py-2 text-sm placeholder:text-espresso/40 focus:bg-white transition-colors">
+      <div id="searchResults" class="hidden absolute mt-2 w-full bg-white border border-espresso/10 rounded-xl shadow-xl overflow-hidden max-h-72 overflow-y-auto z-50"></div>
+    </div>
+
+    <button id="accountBtn" onclick="openAuthModal()" class="hidden sm:inline-flex items-center gap-2 border border-espresso/15 rounded-full px-3 py-2 text-xs font-semibold hover:border-terracotta hover:text-terracotta transition-colors"><i class="fa-solid fa-user"></i><span id="accountBtnText">Sign in</span></button>
+    <button id="mobileMenuBtn" class="lg:hidden text-espresso text-xl px-1"><i class="fa-solid fa-bars"></i></button>
+  </nav>
+  <div id="mobileMenu" class="hidden lg:hidden border-t border-espresso/10 px-4 py-3 flex flex-col gap-3 text-sm font-medium bg-sand">
+    <a href="#explore">Home</a><a href="#explore">Explore</a><a href="#categories">Categories</a><a href="#map">Artisans</a><a href="#stories">Stories</a><a href="#about">About</a><a href="#contact">Contact</a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section id="home" class="relative overflow-hidden paper-texture">
+  <div class="absolute -right-24 -top-24 w-[420px] h-[420px] opacity-[0.07] pointer-events-none">
+    <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="95" fill="none" stroke="#9E3B1B" stroke-width="2"/><circle cx="100" cy="100" r="70" fill="none" stroke="#9E3B1B" stroke-width="2"/><circle cx="100" cy="100" r="45" fill="none" stroke="#9E3B1B" stroke-width="2"/></svg>
+  </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-14 pb-16 md:pt-20 md:pb-24 grid md:grid-cols-[1.15fr_.85fr] gap-12 items-center relative">
+    <div>
+      <span class="inline-flex items-center gap-2 text-xs font-semibold text-terracotta bg-terracotta/10 px-3 py-1.5 rounded-full">
+        <i class="fa-solid fa-hand-holding-heart"></i> Smart India Hackathon · Team Dharohar
+      </span>
+      <h1 class="font-display font-semibold text-4xl sm:text-5xl md:text-[3.3rem] leading-[1.08] mt-5 text-espresso">
+        Discover India's<br class="hidden sm:block"> hidden heritage
+      </h1>
+      <p class="text-espresso/70 text-lg mt-5 max-w-lg leading-relaxed">
+        Explore forgotten places, living traditions and cultural treasures — documented by people, preserved for generations.
+      </p>
+      <div class="flex flex-wrap gap-3 mt-8">
+        <a href="#explore" class="bg-terracotta hover:bg-terracotta2 text-sand px-6 py-3 rounded-lg font-semibold text-sm transition-colors shadow-lg shadow-terracotta/20">
+          Explore Heritage
+        </a>
+        <button onclick="openAddHeritage()" class="border-2 border-espresso/15 hover:border-terracotta hover:text-terracotta px-6 py-3 rounded-lg font-semibold text-sm transition-colors">
+          <i class="fa-solid fa-plus mr-1.5"></i>Add Heritage
+        </button>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-12 pt-8 border-t border-espresso/10">
+        <div><p class="font-display font-semibold text-2xl text-terracotta" data-count="10000">0</p><p class="text-xs text-espresso/60 mt-1">Heritage Records</p></div>
+        <div><p class="font-display font-semibold text-2xl text-terracotta" data-count="500">0</p><p class="text-xs text-espresso/60 mt-1">Contributors</p></div>
+        <div><p class="font-display font-semibold text-2xl text-terracotta" data-count="200">0</p><p class="text-xs text-espresso/60 mt-1">Local Communities</p></div>
+        <div><p class="font-display font-semibold text-2xl text-terracotta" data-count="28">0</p><p class="text-xs text-espresso/60 mt-1">States &amp; UTs</p></div>
+      </div>
+    </div>
+
+    <div class="relative">
+      <div class="hero-photo rounded-2xl relative overflow-hidden border border-espresso/10" id="heroPhoto">
+        <div class="absolute inset-0 bg-gradient-to-t from-espresso/70 via-espresso/10 to-transparent"></div>
+        <div class="absolute left-4 right-4 bottom-4 bg-sand/92 backdrop-blur rounded-xl px-4 py-3 text-xs shadow-lg">
+          <p class="font-semibold text-espresso">Konark-inspired temple heritage</p>
+          <p class="text-espresso/60">Ancient architecture · Living history · India</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPLORE BY CATEGORY ================= -->
+<section id="categories" class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+  <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
+    <div>
+      <p class="section-kicker">Browse the collection</p>
+      <h2 class="font-display font-semibold text-3xl sm:text-4xl text-espresso">Explore by category</h2>
+      <p class="text-espresso/60 mt-2 max-w-2xl">Choose a tradition, place, food, performance or everyday memory to discover.</p>
+    </div>
+  </div>
+  <div id="categoryNav" class="category-nav flex gap-2 overflow-x-auto pb-3 -mx-1 px-1"></div>
+  <div class="mt-7 flex items-center justify-between gap-3">
+    <div>
+      <h3 id="categoryShowcaseTitle" class="font-display text-2xl font-semibold"></h3>
+      <p id="categoryShowcaseDesc" class="text-sm text-espresso/55 mt-1"></p>
+    </div>
+    <button id="clearCategoryFilter" class="hidden text-sm font-semibold text-terracotta whitespace-nowrap">Show all</button>
+  </div>
+  <div id="categoryShowcase" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-5"></div>
+</section>
+
+<!-- ================= EXPLORE BY REGION ================= -->
+<section id="explore" class="bg-sand2 border-y border-espresso/5 py-12 sm:py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-7">
+      <div>
+        <p class="section-kicker">Journey across India</p>
+        <h2 class="font-display font-semibold text-3xl sm:text-4xl text-espresso">Explore by region</h2>
+        <p class="text-espresso/60 mt-2">Choose a region to discover the places, traditions and stories rooted there.</p>
+      </div>
+      <button onclick="renderRegionCards('all')" class="text-sm font-semibold text-terracotta hover:text-terracotta2 whitespace-nowrap">View all regions <i class="fa-solid fa-arrow-right ml-1"></i></button>
+    </div>
+    <div id="regionCards" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4"></div>
+  </div>
+</section>
+
+<!-- ================= HERITAGE MAP & RISK DISCOVERY ================= -->
+<section id="map" class="bg-sand2 py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="mb-10">
+      <h2 class="font-display font-semibold text-3xl text-espresso">Heritage &amp; risk map</h2>
+      <p class="text-espresso/60 mt-2 max-w-xl">Click a hotspot to see traditions at risk in that region. Colour marks how urgently each needs documentation.</p>
+      <div class="flex gap-5 mt-4 text-xs font-medium text-espresso/70">
+        <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-red-600 inline-block"></span>High risk</span>
+        <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-amber-400 inline-block"></span>Medium risk</span>
+        <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block"></span>Low risk</span>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-[1fr_1fr] gap-8 items-start">
+      <div class="bg-white rounded-2xl border border-espresso/10 p-4 sm:p-6">
+        <svg id="indiaMap" viewBox="0 0 300 340" class="w-full h-auto max-h-[440px]">
+          <path d="M120 8 L165 6 L182 30 L210 34 L228 60 L222 82 L245 96 L252 130 L238 150 L248 168 L232 190 L238 220 L210 240 L204 270 L182 300 L168 296 L162 328 L146 322 L138 290 L120 284 L104 252 L118 224 L96 206 L92 176 L70 158 L76 128 L58 104 L74 76 L64 52 L92 40 L100 18 Z"
+            fill="#FDFBF7" stroke="#9E3B1B" stroke-width="2"/>
+        </svg>
+      </div>
+
+      <div>
+        <div id="featuredList" class="space-y-3"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STORIES (brief) ================= -->
+<section id="stories" class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
+  <h2 class="font-display font-semibold text-3xl text-espresso mb-2">Stories from the field</h2>
+  <p class="text-espresso/60 mb-8 max-w-xl">Voices of the artisans and communities keeping traditions alive.</p>
+  <div class="grid sm:grid-cols-3 gap-6">
+    <div class="bg-sand2 rounded-2xl p-6 border border-espresso/10">
+      <i class="fa-solid fa-quote-left text-terracotta/40 text-2xl"></i>
+      <p class="text-sm text-espresso/80 mt-3 leading-relaxed">My grandmother painted these walls before I could walk. Now my daughter paints them with me.</p>
+      <p class="text-xs font-semibold text-espresso/60 mt-4">— Sita Devi, Madhubani artist</p>
+    </div>
+    <div class="bg-sand2 rounded-2xl p-6 border border-espresso/10">
+      <i class="fa-solid fa-quote-left text-terracotta/40 text-2xl"></i>
+      <p class="text-sm text-espresso/80 mt-3 leading-relaxed">Every stick figure tells the village where the harvest was good and where the rains failed.</p>
+      <p class="text-xs font-semibold text-espresso/60 mt-4">— Jivya Soma, Warli painter</p>
+    </div>
+    <div class="bg-sand2 rounded-2xl p-6 border border-espresso/10">
+      <i class="fa-solid fa-quote-left text-terracotta/40 text-2xl"></i>
+      <p class="text-sm text-espresso/80 mt-3 leading-relaxed">Recording our songs means my grandchildren will hear my mother's voice even after we're gone.</p>
+      <p class="text-xs font-semibold text-espresso/60 mt-4">— Karbi elder, Assam</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ADD HERITAGE FORM ================= -->
+<section id="add-heritage" class="bg-espresso py-16 relative overflow-hidden" style="background-image:linear-gradient(90deg,rgba(43,30,25,.96),rgba(43,30,25,.88)),url('data:image/jpeg;base64,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');background-size:cover;background-position:left center;">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-10">
+      <h2 class="font-display font-semibold text-3xl text-sand">Add a heritage record</h2>
+      <p class="text-sand/60 mt-2">Four short steps — your contribution keeps a tradition alive.</p>
+    </div>
+
+    <div class="bg-sand rounded-2xl p-6 sm:p-8">
+      <!-- stepper -->
+      <div class="flex items-center justify-between mb-8">
+        <div class="flex items-center gap-2 flex-1" id="stepperTrack">
+          <div class="step-item flex items-center gap-2 flex-1" data-step="1">
+            <div class="step-dot w-8 h-8 rounded-full bg-terracotta text-sand flex items-center justify-center text-xs font-bold">1</div>
+            <span class="text-xs font-semibold hidden sm:block">Basic Details</span>
+            <div class="flex-1 h-0.5 bg-espresso/10"></div>
+          </div>
+          <div class="step-item flex items-center gap-2 flex-1" data-step="2">
+            <div class="step-dot w-8 h-8 rounded-full bg-espresso/10 text-espresso/50 flex items-center justify-center text-xs font-bold">2</div>
+            <span class="text-xs font-semibold hidden sm:block text-espresso/50">Media</span>
+            <div class="flex-1 h-0.5 bg-espresso/10"></div>
+          </div>
+          <div class="step-item flex items-center gap-2 flex-1" data-step="3">
+            <div class="step-dot w-8 h-8 rounded-full bg-espresso/10 text-espresso/50 flex items-center justify-center text-xs font-bold">3</div>
+            <span class="text-xs font-semibold hidden sm:block text-espresso/50">Location</span>
+            <div class="flex-1 h-0.5 bg-espresso/10"></div>
+          </div>
+          <div class="step-item flex items-center gap-2" data-step="4">
+            <div class="step-dot w-8 h-8 rounded-full bg-espresso/10 text-espresso/50 flex items-center justify-center text-xs font-bold">4</div>
+            <span class="text-xs font-semibold hidden sm:block text-espresso/50">Review</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 1 -->
+      <div class="form-step" data-step="1">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="sm:col-span-2">
+            <label class="text-xs font-semibold text-espresso/70">Heritage name</label>
+            <input id="f_name" type="text" placeholder="e.g. Chhau Mask Making" class="mt-1 w-full border border-espresso/15 rounded-lg px-3 py-2.5 text-sm bg-white">
+          </div>
+          <div>
+            <label class="text-xs font-semibold text-espresso/70">Category</label>
+            <select id="f_category" class="mt-1 w-full border border-espresso/15 rounded-lg px-3 py-2.5 text-sm bg-white"></select>
+          </div>
+          <div>
+            <label class="text-xs font-semibold text-espresso/70">State / Location</label>
+            <input id="f_location" type="text" placeholder="e.g. Purulia, West Bengal" class="mt-1 w-full border border-espresso/15 rounded-lg px-3 py-2.5 text-sm bg-white">
+          </div>
+          <div class="sm:col-span-2">
+            <label class="text-xs font-semibold text-espresso/70">Description</label>
+            <textarea id="f_desc" rows="3" placeholder="Tell us what makes this special..." class="mt-1 w-full border border-espresso/15 rounded-lg px-3 py-2.5 text-sm bg-white"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="form-step hidden" data-step="2">
+        <div class="grid sm:grid-cols-3 gap-4">
+          <button type="button" onclick="document.getElementById('photoFile').click()" class="upload-box border-2 border-dashed border-espresso/20 rounded-xl p-6 text-center hover:border-terracotta transition-colors">
+            <i class="fa-solid fa-camera text-2xl text-terracotta"></i>
+            <p class="text-xs font-semibold mt-2">Photos</p>
+            <p id="photo_status" class="text-[11px] text-espresso/50 mt-1">Choose a photo</p><input id="photoFile" type="file" accept="image/*" class="hidden">
+          </button>
+          <button type="button" onclick="simulateUpload('audio')" class="upload-box border-2 border-dashed border-espresso/20 rounded-xl p-6 text-center hover:border-terracotta transition-colors">
+            <i class="fa-solid fa-microphone text-2xl text-terracotta"></i>
+            <p class="text-xs font-semibold mt-2">Audio (5 min)</p>
+            <p id="audio_status" class="text-[11px] text-espresso/50 mt-1">Oral story / folk song</p>
+          </button>
+          <button type="button" onclick="simulateUpload('video')" class="upload-box border-2 border-dashed border-espresso/20 rounded-xl p-6 text-center hover:border-terracotta transition-colors">
+            <i class="fa-solid fa-video text-2xl text-terracotta"></i>
+            <p class="text-xs font-semibold mt-2">Video</p>
+            <p id="video_status" class="text-[11px] text-espresso/50 mt-1">Tap to simulate upload</p>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="form-step hidden" data-step="3">
+        <p class="text-xs font-semibold text-espresso/70 mb-2">Drop a pin on the map</p>
+        <div id="pinMap" class="relative bg-sand2 border border-espresso/15 rounded-xl h-56 cursor-crosshair overflow-hidden">
+          <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_1px_1px,#2B1E19_1px,transparent_0)] bg-[length:18px_18px]"></div>
+          <div id="pinMarker" class="hidden absolute -translate-x-1/2 -translate-y-full text-terracotta text-2xl"><i class="fa-solid fa-location-dot"></i></div>
+          <p id="pinHint" class="absolute inset-0 flex items-center justify-center text-xs text-espresso/40">Click anywhere to drop a pin</p>
+        </div>
+        <p id="pinCoords" class="text-[11px] text-espresso/50 mt-2"></p>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="form-step hidden" data-step="4">
+        <div class="bg-sand2 rounded-xl p-4 border border-espresso/10">
+          <p class="text-xs font-semibold text-espresso/60 mb-1">AI ASSISTANT</p>
+          <p class="text-sm text-espresso/80 mb-3">Here's what our assistant picked up from your submission:</p>
+          <div id="aiTags" class="flex flex-wrap gap-2 text-xs"></div>
+        </div>
+        <div id="reviewSummary" class="mt-4 text-sm text-espresso/70 space-y-1"></div>
+      </div>
+
+      <div class="flex justify-between mt-8">
+        <button onclick="prevStep()" id="prevBtn" class="text-sm font-semibold text-espresso/50 px-4 py-2 hidden">Back</button>
+        <div class="ml-auto flex gap-3">
+          <button onclick="nextStep()" id="nextBtn" class="bg-terracotta hover:bg-terracotta2 text-sand px-6 py-2.5 rounded-lg text-sm font-semibold transition-colors">Continue</button>
+          <button onclick="submitHeritage()" id="submitBtn" class="hidden bg-teal hover:bg-teal/90 text-sand px-6 py-2.5 rounded-lg text-sm font-semibold transition-colors">Submit Record</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 py-16 grid md:grid-cols-2 gap-10 items-center">
+  <div>
+    <h2 class="font-display font-semibold text-3xl text-espresso mb-4">About Meri Virasat</h2>
+    <p class="text-espresso/70 leading-relaxed">Meri Virasat is a community-powered platform built for the Smart India Hackathon by Team Dharohar. We help people document folk arts, crafts, living traditions and endangered places before they're forgotten — one photo, one recording, one story at a time.</p>
+  </div>
+  <div class="grid grid-cols-2 gap-4">
+    <div class="bg-sand2 rounded-xl p-5"><i class="fa-solid fa-people-group text-terracotta text-xl"></i><p class="text-sm font-semibold mt-2">Community-first</p><p class="text-xs text-espresso/60 mt-1">Built with local contributors, not just for them.</p></div>
+    <div class="bg-sand2 rounded-xl p-5"><i class="fa-solid fa-shield-heart text-terracotta text-xl"></i><p class="text-sm font-semibold mt-2">Risk-aware</p><p class="text-xs text-espresso/60 mt-1">We flag what needs urgent documentation.</p></div>
+  </div>
+</section>
+
+<!-- ================= FOOTER / CONTACT ================= -->
+<footer id="contact" class="bg-espresso text-sand/70">
+  <div class="madhubani-strip"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 grid sm:grid-cols-3 gap-8">
+    <div>
+      <p class="font-display font-semibold text-xl text-sand">Meri Virasat</p>
+      <p class="text-sm mt-2">Our Heritage · Our Pride</p>
+      <p class="text-xs mt-4 text-sand/50">Team Dharohar · Smart India Hackathon</p>
+    </div>
+    <div>
+      <p class="text-sm font-semibold text-sand mb-3">Contact</p>
+      <p class="text-sm">team.dharohar@merivirasat.in</p>
+      <p class="text-sm mt-1">New Delhi, India</p>
+    </div>
+    <div>
+      <p class="text-sm font-semibold text-sand mb-3">Follow</p>
+      <div class="flex gap-3 text-lg">
+        <i class="fa-brands fa-instagram"></i><i class="fa-brands fa-x-twitter"></i><i class="fa-brands fa-youtube"></i>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= HERITAGE DETAIL MODAL ================= -->
+<div id="heritageModal" class="fixed inset-0 z-50 hidden">
+  <div class="absolute inset-0 bg-espresso/60 backdrop-blur-sm" onclick="closeModal()"></div>
+  <div class="absolute inset-0 flex items-start sm:items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div id="modalFrame" class="frame-default bg-sand rounded-2xl w-full max-w-3xl my-6 overflow-hidden relative transition-all duration-300">
+      <button onclick="closeModal()" class="absolute right-4 top-4 z-10 w-8 h-8 rounded-full bg-espresso/10 hover:bg-espresso/20 flex items-center justify-center"><i class="fa-solid fa-xmark"></i></button>
+
+      <div class="p-6 sm:p-8 modal-inner-text">
+        <div class="flex flex-wrap items-start justify-between gap-4">
+          <div>
+            <span id="m_category" class="text-[11px] font-semibold text-terracotta bg-terracotta/10 px-2.5 py-1 rounded-full"></span>
+            <h3 id="m_name" class="font-display font-semibold text-2xl sm:text-3xl mt-3"></h3>
+            <p id="m_location" class="text-sm opacity-60 mt-1"></p>
+          </div>
+          <div class="flex flex-col items-center shrink-0">
+            <svg width="76" height="76" viewBox="0 0 76 76">
+              <circle cx="38" cy="38" r="32" fill="none" stroke-width="7" class="risk-arc-bg"/>
+              <circle id="riskArc" cx="38" cy="38" r="32" fill="none" stroke-width="7" class="risk-arc-fg" stroke="#9E3B1B" stroke-dasharray="201" stroke-dashoffset="201" transform="rotate(-90 38 38)"/>
+              <text id="riskNum" x="38" y="43" text-anchor="middle" font-size="18" font-weight="700" fill="#2B1E19">0</text>
+            </svg>
+            <p id="riskLabel" class="text-[11px] font-semibold mt-1 text-center"></p>
+          </div>
+        </div>
+
+        <div class="detail-art-wrap mt-6">
+          <img id="m_image" class="modal-art" src="" alt="Heritage artwork">
+          <div class="bg-sand2 rounded-xl p-4 border border-espresso/10 text-xs">
+            <p class="font-semibold text-espresso mb-2">Visual reference</p>
+            <p class="text-espresso/60 leading-relaxed">Community imagery helps visitors recognise the craft, place or tradition before reading its story.</p>
+          </div>
+        </div>
+
+        <!-- tabs -->
+        <div class="flex gap-5 overflow-x-auto mt-6 border-b border-espresso/10 text-sm font-semibold opacity-70" id="modalTabs">
+          <button data-tab="history" class="tab-underline active pb-2 whitespace-nowrap">History</button>
+          <button data-tab="story" class="tab-underline pb-2 whitespace-nowrap">Story</button>
+          <button data-tab="tradition" class="tab-underline pb-2 whitespace-nowrap">Tradition</button>
+          <button data-tab="people" class="tab-underline pb-2 whitespace-nowrap">People</button>
+          <button data-tab="evidence" class="tab-underline pb-2 whitespace-nowrap">Evidence</button>
+        </div>
+        <div id="modalTabContent" class="text-sm leading-relaxed opacity-80 mt-5 min-h-[100px]"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= AUTH MODAL ================= -->
+<div id="authModal" class="hidden fixed inset-0 z-[70] bg-espresso/60 backdrop-blur-sm p-4 items-center justify-center">
+  <div class="bg-sand rounded-2xl shadow-2xl w-full max-w-md border border-espresso/10 overflow-hidden">
+    <div class="p-5 border-b border-espresso/10 flex items-center justify-between">
+      <div><p class="text-xs font-semibold text-terracotta">MERI VIRASAT</p><h3 id="authTitle" class="font-display text-2xl font-semibold mt-1">Sign in</h3></div>
+      <button onclick="closeAuthModal()" class="text-espresso/50 hover:text-espresso text-xl"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="p-5">
+      <div class="grid grid-cols-2 gap-2 bg-sand2 p-1 rounded-lg mb-5">
+        <button id="authSignInTab" onclick="setAuthMode('signin')" class="py-2 rounded-md bg-white text-sm font-semibold shadow-sm">Sign in</button>
+        <button id="authSignUpTab" onclick="setAuthMode('signup')" class="py-2 rounded-md text-sm font-semibold text-espresso/60">Create account</button>
+      </div>
+      <label class="text-xs font-semibold text-espresso/70">Name</label>
+      <input id="authName" class="mt-1 mb-3 w-full border border-espresso/15 rounded-lg px-3 py-2.5 text-sm" placeholder="Your name">
+      <label class="text-xs font-semibold text-espresso/70">Email</label>
+      <input id="authEmail" type="email" class="mt-1 mb-3 w-full border border-espresso/15 rounded-lg px-3 py-2.5 text-sm" placeholder="you@example.com">
+      <label class="text-xs font-semibold text-espresso/70">Password</label>
+      <input id="authPassword" type="password" class="mt-1 w-full border border-espresso/15 rounded-lg px-3 py-2.5 text-sm" placeholder="At least 6 characters">
+      <p id="authMessage" class="text-xs mt-3 text-espresso/60"></p>
+      <button id="authSubmit" onclick="submitAuth()" class="w-full mt-4 bg-terracotta hover:bg-terracotta2 text-sand rounded-lg py-2.5 text-sm font-semibold">Continue</button>
+      <button id="signOutBtn" onclick="signOutUser()" class="hidden w-full mt-2 border border-espresso/15 rounded-lg py-2.5 text-sm font-semibold">Sign out</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= TOAST ================= -->
+<div id="toast" class="hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-[60] w-[92%] max-w-md"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-config.js"></script>
+<script>
+
+/* ============ EMBEDDED IMAGE ASSETS ============ */
+const IMAGE_ASSETS = {"madhubani": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20900%20560%22%3E%3Crect%20width%3D%22900%22%20height%3D%22560%22%20fill%3D%22%23F8EFD9%22%2F%3E%3Crect%20x%3D%2212%22%20y%3D%2212%22%20width%3D%22876%22%20height%3D%22536%22%20fill%3D%22none%22%20stroke%3D%22%239E3B1B%22%20stroke-width%3D%2218%22%2F%3E%3Crect%20x%3D%2230%22%20y%3D%2230%22%20width%3D%22840%22%20height%3D%22500%22%20fill%3D%22none%22%20stroke%3D%22%231B6B63%22%20stroke-width%3D%225%22%2F%3E%3Cg%20stroke%3D%22%23B84A24%22%20stroke-width%3D%224%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M70%20100%20Q130%2045%20190%20100%20T310%20100%20T430%20100%20T550%20100%20T670%20100%20T830%20100%22%2F%3E%3Cpath%20d%3D%22M70%20460%20Q130%20515%20190%20460%20T310%20460%20T430%20460%20T550%20460%20T670%20460%20T830%20460%22%2F%3E%3C%2Fg%3E%3Ccircle%20cx%3D%22450%22%20cy%3D%22275%22%20r%3D%22115%22%20fill%3D%22%23D9A441%22%20stroke%3D%22%239E3B1B%22%20stroke-width%3D%224%22%2F%3E%3Cpath%20d%3D%22M450%20160%20C395%20210%20395%20340%20450%20390%20C505%20340%20505%20210%20450%20160Z%22%20fill%3D%22%23B84A24%22%20stroke%3D%22%239E3B1B%22%20stroke-width%3D%224%22%2F%3E%3Cpath%20d%3D%22M335%20275%20C390%20220%20510%20220%20565%20275%20C510%20330%20390%20330%20335%20275Z%22%20fill%3D%22%231B6B63%22%20stroke%3D%22%239E3B1B%22%20stroke-width%3D%224%22%2F%3E%3Cpath%20d%3D%22M450%20190%20l18%2055%2058%200%20-47%2034%2018%2056%20-47%20-34%20-47%2034%2018%20-56%20-47%20-34%2058%200z%22%20fill%3D%22%23F8EFD9%22%20stroke%3D%22%239E3B1B%22%20stroke-width%3D%224%22%2F%3E%3Cg%20fill%3D%22%23B84A24%22%20stroke%3D%22%231B6B63%22%20stroke-width%3D%223%22%3E%3Cpath%20d%3D%22M105%20190%20q55-55%20110%200%20q-55%2065-110%200z%22%2F%3E%3Cpath%20d%3D%22M685%20190%20q55-55%20110%200%20q-55%2065-110%200z%22%2F%3E%3Cpath%20d%3D%22M105%20360%20q55-55%20110%200%20q-55%2065-110%200z%22%2F%3E%3Cpath%20d%3D%22M685%20360%20q55-55%20110%200%20q-55%2065-110%200z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E", "warli": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20900%20560%22%3E%3Crect%20width%3D%22900%22%20height%3D%22560%22%20fill%3D%22%234A3022%22%2F%3E%3Crect%20x%3D%2218%22%20y%3D%2218%22%20width%3D%22864%22%20height%3D%22524%22%20fill%3D%22none%22%20stroke%3D%22%23F1E6D8%22%20stroke-width%3D%228%22%2F%3E%3Cg%20stroke%3D%22%23F1E6D8%22%20fill%3D%22none%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M450%20100%20L450%20380%20M450%20145%20L360%20220%20M450%20145%20L540%20220%20M450%20220%20L380%20300%20M450%20220%20L520%20300%22%2F%3E%3Cpath%20d%3D%22M450%2070%20l-18%2025%20h36%20z%22%2F%3E%3Ccircle%20cx%3D%22450%22%20cy%3D%2262%22%20r%3D%2210%22%2F%3E%3Cpath%20d%3D%22M180%20410%20L250%20350%20L320%20410%20L250%20470%20Z%20M580%20410%20L650%20350%20L720%20410%20L650%20470%20Z%22%2F%3E%3Cpath%20d%3D%22M180%20410%20V470%20H320%20V410%20M580%20410%20V470%20H720%20V410%22%2F%3E%3Cpath%20d%3D%22M110%20470%20Q150%20430%20190%20470%20M710%20470%20Q750%20430%20790%20470%22%2F%3E%3Ccircle%20cx%3D%22260%22%20cy%3D%22245%22%20r%3D%2210%22%2F%3E%3Cpath%20d%3D%22M260%20255%20l-25%2055%20h50%20z%22%2F%3E%3Ccircle%20cx%3D%22640%22%20cy%3D%22245%22%20r%3D%2210%22%2F%3E%3Cpath%20d%3D%22M640%20255%20l-25%2055%20h50%20z%22%2F%3E%3Cpath%20d%3D%22M100%20150%20q35-45%2070%200%20q35-45%2070%200%20M660%20150%20q35-45%2070%200%20q35-45%2070%200%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E", "stepwell": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20900%20560%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22s%22%20x1%3D%220%22%20x2%3D%220%22%20y1%3D%220%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%23E8C98D%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23F7E9CC%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22900%22%20height%3D%22560%22%20fill%3D%22url%28%23s%29%22%2F%3E%3Crect%20y%3D%22400%22%20width%3D%22900%22%20height%3D%22160%22%20fill%3D%22%23C99558%22%2F%3E%3Cpath%20d%3D%22M130%20400%20L210%20155%20L690%20155%20L770%20400%20Z%22%20fill%3D%22%23B87943%22%20stroke%3D%22%236F3F2A%22%20stroke-width%3D%228%22%2F%3E%3Cpath%20d%3D%22M215%20170%20L270%20380%20L630%20380%20L685%20170%20Z%22%20fill%3D%22%23D8AA6A%22%20stroke%3D%22%236F3F2A%22%20stroke-width%3D%226%22%2F%3E%3Cpath%20d%3D%22M300%20370%20L335%20205%20L565%20205%20L600%20370%20Z%22%20fill%3D%22%238E5B3A%22%20stroke%3D%22%235B3827%22%20stroke-width%3D%226%22%2F%3E%3Cpath%20d%3D%22M365%20360%20L390%20245%20L510%20245%20L535%20360%20Z%22%20fill%3D%22%233B5360%22%20stroke%3D%22%235B3827%22%20stroke-width%3D%226%22%2F%3E%3Cg%20stroke%3D%22%23F1D39A%22%20stroke-width%3D%228%22%3E%3Cpath%20d%3D%22M250%20180%20l40%20200%20M300%20180%20l35%20200%20M350%20180%20l30%20200%20M550%20180%20l-30%20200%20M600%20180%20l-35%20200%20M650%20180%20l-40%20200%22%2F%3E%3C%2Fg%3E%3Ctext%20x%3D%22450%22%20y%3D%2275%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2238%22%20fill%3D%22%234A2B1E%22%3ELiving%20Stepwells%3C%2Ftext%3E%3C%2Fsvg%3E", "chhau": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20900%20560%22%3E%3Crect%20width%3D%22900%22%20height%3D%22560%22%20fill%3D%22%23F5E8CF%22%2F%3E%3Cpath%20d%3D%22M0%2055%20Q80%2015%20160%2055%20T320%2055%20T480%2055%20T640%2055%20T800%2055%20T960%2055%22%20fill%3D%22none%22%20stroke%3D%22%23B84A24%22%20stroke-width%3D%2218%22%2F%3E%3Cpath%20d%3D%22M0%20505%20Q80%20545%20160%20505%20T320%20505%20T480%20505%20T640%20505%20T800%20505%20T960%20505%22%20fill%3D%22none%22%20stroke%3D%22%231B6B63%22%20stroke-width%3D%2218%22%2F%3E%3Cg%20transform%3D%22translate%28450%20285%29%22%3E%3Cpath%20d%3D%22M-130%20-80%20Q0%20-180%20130%20-80%20L110%2080%20Q0%20175%20-110%2080Z%22%20fill%3D%22%23C54E2A%22%20stroke%3D%22%236A2B1B%22%20stroke-width%3D%229%22%2F%3E%3Cpath%20d%3D%22M-70%20-35%20Q-35%20-80%200%20-35%20Q35%20-80%2070%20-35%22%20fill%3D%22none%22%20stroke%3D%22%23F7D68D%22%20stroke-width%3D%2212%22%2F%3E%3Ccircle%20cx%3D%22-48%22%20cy%3D%225%22%20r%3D%2218%22%20fill%3D%22%23F7D68D%22%2F%3E%3Ccircle%20cx%3D%2248%22%20cy%3D%225%22%20r%3D%2218%22%20fill%3D%22%23F7D68D%22%2F%3E%3Ccircle%20cx%3D%22-48%22%20cy%3D%225%22%20r%3D%226%22%20fill%3D%22%233B2A1E%22%2F%3E%3Ccircle%20cx%3D%2248%22%20cy%3D%225%22%20r%3D%226%22%20fill%3D%22%233B2A1E%22%2F%3E%3Cpath%20d%3D%22M-75%2055%20Q0%20115%2075%2055%22%20fill%3D%22%23F7D68D%22%20stroke%3D%22%236A2B1B%22%20stroke-width%3D%227%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E", "pattachitra": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20900%20560%22%3E%3Crect%20width%3D%22900%22%20height%3D%22560%22%20fill%3D%22%23F6E9C9%22%2F%3E%3Crect%20x%3D%2218%22%20y%3D%2218%22%20width%3D%22864%22%20height%3D%22524%22%20fill%3D%22none%22%20stroke%3D%22%239E3B1B%22%20stroke-width%3D%2216%22%2F%3E%3Crect%20x%3D%2240%22%20y%3D%2240%22%20width%3D%22820%22%20height%3D%22480%22%20fill%3D%22%23D8A33E%22%20stroke%3D%22%231B6B63%22%20stroke-width%3D%226%22%2F%3E%3Ccircle%20cx%3D%22450%22%20cy%3D%22275%22%20r%3D%22145%22%20fill%3D%22%23B84A24%22%20stroke%3D%22%234A281B%22%20stroke-width%3D%228%22%2F%3E%3Ccircle%20cx%3D%22450%22%20cy%3D%22275%22%20r%3D%2290%22%20fill%3D%22%23F4D77B%22%20stroke%3D%22%234A281B%22%20stroke-width%3D%227%22%2F%3E%3Ccircle%20cx%3D%22450%22%20cy%3D%22275%22%20r%3D%2225%22%20fill%3D%22%231B6B63%22%2F%3E%3Cg%20stroke%3D%22%234A281B%22%20stroke-width%3D%226%22%3E%3Cpath%20d%3D%22M450%20130%20V420%20M305%20275%20H595%20M348%20173%20L552%20377%20M552%20173%20L348%20377%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E", "bamboo": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20900%20560%22%3E%3Crect%20width%3D%22900%22%20height%3D%22560%22%20fill%3D%22%23E8D8B9%22%2F%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23789C4D%22%20stroke-width%3D%2248%22%3E%3Cpath%20d%3D%22M120%20470%20C200%20390%20180%20210%20260%20110%22%2F%3E%3Cpath%20d%3D%22M260%20470%20C350%20390%20330%20190%20410%2080%22%2F%3E%3Cpath%20d%3D%22M400%20470%20C490%20390%20470%20170%20550%2070%22%2F%3E%3Cpath%20d%3D%22M540%20470%20C630%20390%20610%20210%20690%20100%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M300%20210%20Q450%2090%20600%20210%20L570%20410%20H330%20Z%22%20fill%3D%22%23C89552%22%20stroke%3D%22%234A3825%22%20stroke-width%3D%228%22%2F%3E%3Cg%20stroke%3D%22%23F2E3BE%22%20stroke-width%3D%229%22%3E%3Cpath%20d%3D%22M330%20250%20H570%20M320%20300%20H580%20M315%20350%20H585%20M350%20210%20V390%20M400%20170%20V400%20M450%20150%20V410%20M500%20170%20V400%20M550%20210%20V390%22%2F%3E%3C%2Fg%3E%3Ctext%20x%3D%22450%22%20y%3D%22520%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2228%22%20fill%3D%22%234A3825%22%3EBamboo%20Craft%3C%2Ftext%3E%3C%2Fsvg%3E", "puppet": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20900%20560%22%3E%3Crect%20width%3D%22900%22%20height%3D%22560%22%20fill%3D%22%23F4E4C5%22%2F%3E%3Ccircle%20cx%3D%22450%22%20cy%3D%22100%22%20r%3D%2255%22%20fill%3D%22%23D9A441%22%20stroke%3D%22%237A3A20%22%20stroke-width%3D%228%22%2F%3E%3Cpath%20d%3D%22M360%20180%20Q450%20135%20540%20180%20L500%20390%20H400%20Z%22%20fill%3D%22%23B84A24%22%20stroke%3D%22%237A3A20%22%20stroke-width%3D%228%22%2F%3E%3Cpath%20d%3D%22M400%20390%20L350%20485%20M500%20390%20L550%20485%20M360%20205%20L275%20290%20M540%20205%20L625%20290%22%20stroke%3D%22%237A3A20%22%20stroke-width%3D%2214%22%2F%3E%3Cg%20fill%3D%22%231B6B63%22%3E%3Ccircle%20cx%3D%22430%22%20cy%3D%2295%22%20r%3D%227%22%2F%3E%3Ccircle%20cx%3D%22470%22%20cy%3D%2295%22%20r%3D%227%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M420%20120%20Q450%20140%20480%20120%22%20fill%3D%22none%22%20stroke%3D%22%237A3A20%22%20stroke-width%3D%226%22%2F%3E%3Ctext%20x%3D%22450%22%20y%3D%22540%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2230%22%20fill%3D%22%234A2B1E%22%3ERajasthani%20Puppetry%3C%2Ftext%3E%3C%2Fsvg%3E", "hero": "data:image/jpeg;base64,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"};
+/* ============ DATA ============ */
+let HERITAGE = [
+  { id:1, name:'Madhubani Painting', category:'Folk Art', region:'East', location:'Mithila, Bihar', risk:82, riskLabel:'High Preservation Risk', theme:'madhubani', image:IMAGE_ASSETS.madhubani,
+    x:64,y:34,
+    history:'Originating in the Mithila region of Bihar, Madhubani painting dates back centuries, traditionally made by women on mud walls and floors during festivals and ceremonies.',
+    story:'Passed from mother to daughter, each motif — fish for fertility, peacocks for love — carries a story told long before it was ever written down.',
+    tradition:'Natural pigments from turmeric, indigo and charcoal are used; double-line borders and geometric patterns fill every inch of the surface.',
+    people:'Practiced today by roughly 2,500 documented artisan families across Madhubani and Darbhanga districts.',
+    evidence:'14 field recordings, 63 photographs, 2 oral history interviews collected by community contributors.' },
+  { id:2, name:'Warli Wall Art', category:'Folk Art', region:'West', location:'Palghar, Maharashtra', risk:58, riskLabel:'Moderate Risk', theme:'warli', image:IMAGE_ASSETS.warli,
+    x:38,y:70,
+    history:'Practiced by the Warli tribe for over 2,500 years, this art form uses basic geometric shapes to depict daily and social life.',
+    story:'Stick figures dance around a central tree in the tarpa dance — a scene repeated in Warli homes at every harvest.',
+    tradition:'White rice-paste paint on a mud base of red ochre; no religious iconography, only scenes of everyday tribal life.',
+    people:'Roughly 400 practicing artists remain in villages across Palghar and Nashik.',
+    evidence:'9 videos, 40 photographs documenting technique and ritual context.' },
+  { id:3, name:'Chhau Mask Making', category:'Craft', region:'East', location:'Purulia, West Bengal', risk:74, riskLabel:'High Preservation Risk', theme:'default', image:IMAGE_ASSETS.chhau,
+    x:66,y:40,
+    history:'Chhau masks have been handcrafted for the martial dance-drama form since the 19th century in Purulia district.',
+    story:'Each mask is built layer by layer from clay, cloth and paper — a process that can take up to a week per mask.',
+    tradition:'Masks depict gods, demons and animals from the Mahabharata and Ramayana, used exclusively in Chhau performances.',
+    people:'Fewer than 150 mask-making families remain, concentrated in Charida village.',
+    evidence:'22 photographs, 3 process videos, 1 detailed interview with a third-generation mask-maker.' },
+  { id:4, name:'Living Stepwells', category:'Endangered Place', region:'West', location:'Patan, Gujarat', risk:88, riskLabel:'High Preservation Risk', theme:'default', image:IMAGE_ASSETS.stepwell,
+    x:32,y:52,
+    history:'Rani ki Vav and other stepwells were built between the 7th and 19th centuries as water storage and community gathering spaces.',
+    story:'Local elders recall wells that once hosted festivals and daily gatherings, now largely dry and closed off.',
+    tradition:'Intricate carved sculpture panels line the descending stairways, blending function with sacred architecture.',
+    people:'Maintained by a handful of local historical societies and volunteer guides.',
+    evidence:'31 photographs, 1 structural survey, 4 community interviews.' },
+  { id:5, name:'Pattachitra Scroll Painting', category:'Classical Art', region:'South', location:'Puri, Odisha', risk:45, riskLabel:'Moderate Risk', theme:'default', image:IMAGE_ASSETS.pattachitra,
+    x:58,y:78,
+    history:'A classical scroll-painting tradition tied closely to the Jagannath temple, dating back over a thousand years.',
+    story:'Artists narrate mythological tales frame by frame, often performing the stories aloud as they unroll the scroll.',
+    tradition:'Painted on cloth stiffened with tamarind paste, using natural pigments and fine brushwork.',
+    people:'Around 1,200 registered artisan households in and around Raghurajpur village.',
+    evidence:'18 photographs, 6 recorded storytelling sessions.' },
+  { id:6, name:'Naga Bamboo Craft', category:'Craft', region:'Northeast', location:'Kohima, Nagaland', risk:66, riskLabel:'Moderate Risk', theme:'default', image:IMAGE_ASSETS.bamboo,
+    x:82,y:44,
+    history:'Bamboo craft among Naga tribes has supplied household tools, armor and ceremonial items for generations.',
+    story:'Elders describe weaving patterns that once signified a village\'s clan and social rank.',
+    tradition:'Split bamboo is woven into baskets, mats, and warrior shields using techniques rarely written down.',
+    people:'Practiced by artisan collectives across a handful of Naga villages.',
+    evidence:'12 photographs, 2 skill-transfer workshop recordings.' },
+  { id:7, name:'Hampi Temple Complex', category:'Endangered Place', region:'South', location:'Hampi, Karnataka', risk:36, riskLabel:'Low Risk', theme:'default', image:IMAGE_ASSETS.hero,
+    x:48,y:84,
+    history:'The ruins of the Vijayanagara Empire capital, built primarily between the 14th and 16th centuries.',
+    story:'Local guides pass down oral accounts of the empire\'s grandeur that predate most written records of the site.',
+    tradition:'Dravidian temple architecture with elaborate stone chariots, pillared halls, and musical pillars.',
+    people:'Protected as a UNESCO World Heritage Site with active conservation teams.',
+    evidence:'50+ photographs, official conservation reports on file.' },
+  { id:8, name:'Rajasthani Puppetry (Kathputli)', category:'Living Tradition', region:'North', location:'Jaipur, Rajasthan', risk:70, riskLabel:'High Preservation Risk', theme:'default', image:IMAGE_ASSETS.chhau,
+    x:34,y:26,
+    history:'String puppetry performed by the Bhat community of Rajasthan for over a thousand years, historically used to narrate royal chronicles.',
+    story:'Puppeteers still perform folk tales of valour and romance at village fairs, though bookings have thinned each year.',
+    tradition:'Hand-carved wooden puppets in colourful costumes, controlled by strings and accompanied by folk music.',
+    people:'An estimated 300 performing families remain, many shifting to other work.',
+    evidence:'16 videos of live performances, 8 interviews with performing families.' },
+];
+
+
+
+const CATEGORIES = {
+  North: {label:'North India', desc:'Temples, Forts & Art', icon:'fa-landmark'},
+  East: {label:'East India', desc:'Folk Arts, Tribes & Culture', icon:'fa-palette'},
+  West: {label:'West India', desc:'Crafts, Architecture & Warli Art', icon:'fa-shapes'},
+  South: {label:'South India', desc:'Temples & Classical Arts', icon:'fa-om'},
+  Northeast: {label:'Northeast India', desc:'Tribes & Handicrafts', icon:'fa-leaf'},
+};
+
+/* ============ CATEGORY DISCOVERY ============ */
+let HERITAGE_CATEGORIES = [{"name": "Folk Songs", "icon": "fa-music", "desc": "Traditional songs, ballads & oral music"}, {"name": "Folk Dances", "icon": "fa-person-running", "desc": "Community dances & performance traditions"}, {"name": "Recipes & Food", "icon": "fa-bowl-food", "desc": "Traditional recipes, foods & cooking knowledge"}, {"name": "Childhood Games", "icon": "fa-gamepad", "desc": "Traditional games played across generations"}, {"name": "Temples", "icon": "fa-gopuram", "desc": "Temples, shrines & sacred architecture"}, {"name": "Churches", "icon": "fa-church", "desc": "Churches & Christian heritage places"}, {"name": "Mosques", "icon": "fa-mosque", "desc": "Mosques & Islamic heritage architecture"}, {"name": "Gurudwaras", "icon": "fa-place-of-worship", "desc": "Sikh religious places & traditions"}, {"name": "Old Places", "icon": "fa-landmark", "desc": "Historic buildings, streets & places"}, {"name": "Forts & Palaces", "icon": "fa-chess-rook", "desc": "Forts, palaces & royal heritage"}, {"name": "Folk Art", "icon": "fa-palette", "desc": "Paintings, murals & community art"}, {"name": "Crafts & Handicrafts", "icon": "fa-hands", "desc": "Traditional crafts & artisan skills"}, {"name": "Festivals & Rituals", "icon": "fa-dharmachakra", "desc": "Festivals, rituals & community customs"}, {"name": "Folk Theatre", "icon": "fa-masks-theater", "desc": "Traditional theatre, puppetry & performance"}, {"name": "Traditional Clothing", "icon": "fa-shirt", "desc": "Traditional dress, textiles & adornment"}, {"name": "Oral Stories & Legends", "icon": "fa-book-open", "desc": "Stories, legends, myths & oral histories"}, {"name": "Languages & Dialects", "icon": "fa-language", "desc": "Regional languages, dialects & expressions"}, {"name": "Music & Instruments", "icon": "fa-drum", "desc": "Traditional music, instruments & musicians"}, {"name": "Architecture", "icon": "fa-building-columns", "desc": "Traditional buildings & architectural knowledge"}, {"name": "Nature & Sacred Landscapes", "icon": "fa-tree", "desc": "Sacred groves, rivers, hills & landscapes"}];
+const CATEGORY_NAMES = HERITAGE_CATEGORIES.map(c=>c.name);
+const CATEGORY_SHOWCASE = {"Folk Songs": [{"id": 1001, "name": "Pandwani Singing", "category": "Folk Songs", "location": "Bihar", "region": "East", "risk": 34, "riskLabel": "Low Risk", "theme": "folk-songs", "image": "https://www.jagranimages.com/images/14_02_2019-teejan_bai_18950214.jpg", "history": "Pandwani Singing is presented here as a representative folk songs entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Pandwani Singing its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Pandwani Singing.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1002, "name": "Baul Music", "category": "Folk Songs", "location": "Rajasthan", "region": "North", "risk": 48, "riskLabel": "Moderate Risk", "theme": "folk-songs", "image": "https://www.jagranimages.com/images/14_02_2019-teejan_bai_18950214.jpg", "history": "Baul Music is presented here as a representative folk songs entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Baul Music its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Baul Music.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1003, "name": "Bhojpuri Sohar", "category": "Folk Songs", "location": "Assam", "region": "Northeast", "risk": 66, "riskLabel": "Needs Documentation", "theme": "folk-songs", "image": "https://www.jagranimages.com/images/14_02_2019-teejan_bai_18950214.jpg", "history": "Bhojpuri Sohar is presented here as a representative folk songs entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Bhojpuri Sohar its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Bhojpuri Sohar.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}], "Folk Dances": [{"id": 1004, "name": "Ghoomar", "category": "Folk Dances", "location": "Assam", "region": "North", "risk": 34, "riskLabel": "Low Risk", "theme": "folk-dances", "image": "https://www.caleidoscope.in/wp-content/uploads/2022/03/Folk-Dances-of-Rajasthan.jpg", "history": "Ghoomar is presented here as a representative folk dances entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Ghoomar its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Ghoomar.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1005, "name": "Bihu Dance", "category": "Folk Dances", "location": "Maharashtra", "region": "Northeast", "risk": 48, "riskLabel": "Moderate Risk", "theme": "folk-dances", "image": "https://www.caleidoscope.in/wp-content/uploads/2022/03/Folk-Dances-of-Rajasthan.jpg", "history": "Bihu Dance is presented here as a representative folk dances entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Bihu Dance its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Bihu Dance.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1006, "name": "Chhau Dance", "category": "Folk Dances", "location": "Odisha", "region": "West", "risk": 66, "riskLabel": "Needs Documentation", "theme": "folk-dances", "image": "https://www.caleidoscope.in/wp-content/uploads/2022/03/Folk-Dances-of-Rajasthan.jpg", "history": "Chhau Dance is presented here as a representative folk dances entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Chhau Dance its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Chhau Dance.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}], "Recipes & Food": [{"id": 1007, "name": "Litti Chokha", "category": "Recipes & Food", "location": "Odisha", "region": "Northeast", "risk": 34, "riskLabel": "Low Risk", "theme": "recipes-food", "image": "https://cf-img-a-in.tosshub.com/sites/visualstory/wp/2023/11/F_wwtMyXIAEgbQ0.png?size=%2A%3A900", "history": "Litti Chokha is presented here as a representative recipes & food entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Litti Chokha its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Litti Chokha.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1008, "name": "Sarson Saag & Makki Roti", "category": "Recipes & Food", "location": "Tamil Nadu", "region": "West", "risk": 48, "riskLabel": "Moderate Risk", "theme": "recipes-food", "image": "https://cf-img-a-in.tosshub.com/sites/visualstory/wp/2023/11/F_wwtMyXIAEgbQ0.png?size=%2A%3A900", "history": "Sarson Saag & Makki Roti is presented here as a representative recipes & food entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Sarson Saag & Makki Roti its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Sarson Saag & Makki Roti.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1009, "name": "Bengali Panta Bhaat", "category": "Recipes & Food", "location": "Goa", "region": "East", "risk": 66, "riskLabel": "Needs Documentation", "theme": "recipes-food", "image": "https://cf-img-a-in.tosshub.com/sites/visualstory/wp/2023/11/F_wwtMyXIAEgbQ0.png?size=%2A%3A900", "history": "Bengali Panta Bhaat is presented here as a representative recipes & food entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Bengali Panta Bhaat its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Bengali Panta Bhaat.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}], "Childhood Games": [{"id": 1010, "name": "Lagori", "category": "Childhood Games", "location": "Goa", "region": "West", "risk": 34, "riskLabel": "Low Risk", "theme": "childhood-games", "image": "https://strive.lshtm.ac.uk/sites/strive.lshtm.ac.uk/files/styles/photo-large/public/photos/lagori.jpg?itok=QS1EGQH6", "history": "Lagori is presented here as a representative childhood games entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Lagori its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Lagori.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1011, "name": "Gilli Danda", "category": "Childhood Games", "location": "Kerala", "region": "East", "risk": 48, "riskLabel": "Moderate Risk", "theme": "childhood-games", "image": "https://strive.lshtm.ac.uk/sites/strive.lshtm.ac.uk/files/styles/photo-large/public/photos/lagori.jpg?itok=QS1EGQH6", "history": "Gilli Danda is presented here as a representative childhood games entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Gilli Danda its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Gilli Danda.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1012, "name": "Pithoo", "category": "Childhood Games", "location": "Uttar Pradesh", "region": "South", "risk": 66, "riskLabel": "Needs Documentation", "theme": "childhood-games", "image": "https://strive.lshtm.ac.uk/sites/strive.lshtm.ac.uk/files/styles/photo-large/public/photos/lagori.jpg?itok=QS1EGQH6", "history": "Pithoo is presented here as a representative childhood games entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Pithoo its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Pithoo.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}], "Temples": [{"id": 1013, "name": "Konark Sun Temple", "category": "Temples", "location": "Uttar Pradesh", "region": "East", "risk": 34, "riskLabel": "Low Risk", "theme": "temples", "image": "https://strive.lshtm.ac.uk/sites/strive.lshtm.ac.uk/files/styles/photo-large/public/photos/lagori.jpg?itok=QS1EGQH6", "history": "Konark Sun Temple is presented here as a representative temples entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Konark Sun Temple its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Konark Sun Temple.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1014, "name": "Kandariya Mahadev Temple", "category": "Temples", "location": "Gujarat", "region": "South", "risk": 48, "riskLabel": "Moderate Risk", "theme": "temples", "image": "https://bangalore.explocity.com/media/media/events/PAVAKATHAKALI_Bhima_and_Draupadi_in_Kalyanasougandhikam_-_Natanakairali.jpg", "history": "Kandariya Mahadev Temple is presented here as a representative temples entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Kandariya Mahadev Temple its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Kandariya Mahadev Temple.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1015, "name": "Meenakshi Amman Temple", "category": "Temples", "location": "Punjab", "region": "West", "risk": 66, "riskLabel": "Needs Documentation", "theme": "temples", "image": "https://www.artofit.org/image-gallery/221098662946562991/burgundy-colour-silk-embroidered-saree/", "history": "Meenakshi Amman Temple is presented here as a representative temples entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Meenakshi Amman Temple its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Meenakshi Amman Temple.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}], "Churches": [{"id": 1016, "name": "Bom Jesus Basilica", "category": "Churches", "location": "Punjab", "region": "South", "risk": 34, "riskLabel": "Low Risk", "theme": "churches", "image": "https://silversandsdaman.com/images/uploads/586/835daman_001.jpg", "history": "Bom Jesus Basilica is presented here as a representative churches entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Bom Jesus Basilica its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Bom Jesus Basilica.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1017, "name": "Our Lady of Dolours Basilica", "category": "Churches", "location": "West Bengal", "region": "West", "risk": 48, "riskLabel": "Moderate Risk", "theme": "churches", "image": "https://silversandsdaman.com/images/uploads/586/835daman_001.jpg", "history": "Our Lady of Dolours Basilica is presented here as a representative churches entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Our Lady of Dolours Basilica its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Our Lady of Dolours Basilica.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1018, "name": "St. Philomena’s Cathedral", "category": "Churches", "location": "Nagaland", "region": "South", "risk": 66, "riskLabel": "Needs Documentation", "theme": "churches", "image": "https://silversandsdaman.com/images/uploads/586/835daman_001.jpg", "history": "St. Philomena’s Cathedral is presented here as a representative churches entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give St. Philomena’s Cathedral its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with St. Philomena’s Cathedral.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}], "Mosques": [{"id": 1019, "name": "Jama Masjid Delhi", "category": "Mosques", "location": "Nagaland", "region": "West", "risk": 34, "riskLabel": "Low Risk", "theme": "mosques", "image": "https://strive.lshtm.ac.uk/sites/strive.lshtm.ac.uk/files/styles/photo-large/public/photos/lagori.jpg?itok=QS1EGQH6", "history": "Jama Masjid Delhi is presented here as a representative mosques entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Jama Masjid Delhi its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Jama Masjid Delhi.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1020, "name": "Charminar Mosque", "category": "Mosques", "location": "Karnataka", "region": "South", "risk": 48, "riskLabel": "Moderate Risk", "theme": "mosques", "image": "https://bangalore.explocity.com/media/media/events/PAVAKATHAKALI_Bhima_and_Draupadi_in_Kalyanasougandhikam_-_Natanakairali.jpg", "history": "Charminar Mosque is presented here as a representative mosques entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Charminar Mosque its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Charminar Mosque.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1021, "name": "Bibi Ka Maqbara Mosque", "category": "Mosques", "location": "Madhya Pradesh", "region": "North", "risk": 66, "riskLabel": "Needs Documentation", "theme": "mosques", "image": "https://www.artofit.org/image-gallery/221098662946562991/burgundy-colour-silk-embroidered-saree/", "history": "Bibi Ka Maqbara Mosque is presented here as a representative mosques entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Bibi Ka Maqbara Mosque its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Bibi Ka Maqbara Mosque.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}], "Gurudwaras": [{"id": 1022, "name": "Golden Temple", "category": "Gurudwaras", "location": "Madhya Pradesh", "region": "South", "risk": 34, "riskLabel": "Low Risk", "theme": "gurudwaras", "image": "https://img.topky.sk/cestovky/big/2857599.jpg/chram-India.jpg", "history": "Golden Temple is presented here as a representative gurudwaras entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Golden Temple its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Golden Temple.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1023, "name": "Gurudwara Bangla Sahib", "category": "Gurudwaras", "location": "Uttarakhand", "region": "North", "risk": 48, "riskLabel": "Moderate Risk", "theme": "gurudwaras", "image": "https://img.topky.sk/cestovky/big/2857599.jpg/chram-India.jpg", "history": "Gurudwara Bangla Sahib is presented here as a representative gurudwaras entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Gurudwara Bangla Sahib its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Gurudwara Bangla Sahib.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1024, "name": "Takht Sri Patna Sahib", "category": "Gurudwaras", "location": "Jharkhand", "region": "West", "risk": 66, "riskLabel": "Needs Documentation", "theme": "gurudwaras", "image": "https://img.topky.sk/cestovky/big/2857599.jpg/chram-India.jpg", "history": "Takht Sri Patna Sahib is presented here as a representative gurudwaras entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Takht Sri Patna Sahib its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Takht Sri Patna Sahib.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}], "Old Places": [{"id": 1025, "name": "Varanasi Ghats", "category": "Old Places", "location": "Jharkhand", "region": "North", "risk": 34, "riskLabel": "Low Risk", "theme": "old-places", "image": "https://bangalore.explocity.com/media/media/events/PAVAKATHAKALI_Bhima_and_Draupadi_in_Kalyanasougandhikam_-_Natanakairali.jpg", "history": "Varanasi Ghats is presented here as a representative old places entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Varanasi Ghats its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Varanasi Ghats.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1026, "name": "Maheshwar Fort Town", "category": "Old Places", "location": "Telangana", "region": "West", "risk": 48, "riskLabel": "Moderate Risk", "theme": "old-places", "image": "https://www.artofit.org/image-gallery/221098662946562991/burgundy-colour-silk-embroidered-saree/", "history": "Maheshwar Fort Town is presented here as a representative old places entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Maheshwar Fort Town its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Maheshwar Fort Town.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1027, "name": "Chettinad Heritage Streets", "category": "Old Places", "location": "Himachal Pradesh", "region": "North", "risk": 66, "riskLabel": "Needs Documentation", "theme": "old-places", "image": "https://www.jagranimages.com/images/14_02_2019-teejan_bai_18950214.jpg", "history": "Chettinad Heritage Streets is presented here as a representative old places entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Chettinad Heritage Streets its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Chettinad Heritage Streets.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}], "Forts & Palaces": [{"id": 1028, "name": "Amber Fort", "category": "Forts & Palaces", "location": "Himachal Pradesh", "region": "West", "risk": 34, "riskLabel": "Low Risk", "theme": "forts-palaces", "image": "https://www.worldatlas.com/r/w1200/upload/5e/39/8d/amber-fort.jpg", "history": "Amber Fort is presented here as a representative forts & palaces entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Amber Fort its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Amber Fort.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1029, "name": "Mehrangarh Fort", "category": "Forts & Palaces", "location": "Meghalaya", "region": "North", "risk": 48, "riskLabel": "Moderate Risk", "theme": "forts-palaces", "image": "https://www.worldatlas.com/r/w1200/upload/5e/39/8d/amber-fort.jpg", "history": "Mehrangarh Fort is presented here as a representative forts & palaces entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Mehrangarh Fort its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Mehrangarh Fort.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1030, "name": "Mysore Palace", "category": "Forts & Palaces", "location": "Bihar", "region": "East", "risk": 66, "riskLabel": "Needs Documentation", "theme": "forts-palaces", "image": "https://www.worldatlas.com/r/w1200/upload/5e/39/8d/amber-fort.jpg", "history": "Mysore Palace is presented here as a representative forts & palaces entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Mysore Palace its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Mysore Palace.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}], "Folk Art": [{"id": 1031, "name": "Madhubani Painting", "category": "Folk Art", "location": "Bihar", "region": "North", "risk": 34, "riskLabel": "Low Risk", "theme": "folk-art", "image": "https://cf-img-a-in.tosshub.com/sites/visualstory/wp/2023/11/F_wwtMyXIAEgbQ0.png?size=%2A%3A900", "history": "Madhubani Painting is presented here as a representative folk art entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Madhubani Painting its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Madhubani Painting.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1032, "name": "Warli Wall Art", "category": "Folk Art", "location": "Rajasthan", "region": "East", "risk": 48, "riskLabel": "Moderate Risk", "theme": "folk-art", "image": "https://silversandsdaman.com/images/uploads/586/835daman_001.jpg", "history": "Warli Wall Art is presented here as a representative folk art entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Warli Wall Art its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Warli Wall Art.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1033, "name": "Pattachitra", "category": "Folk Art", "location": "Assam", "region": "Northeast", "risk": 66, "riskLabel": "Needs Documentation", "theme": "folk-art", "image": "https://img.topky.sk/cestovky/big/2857599.jpg/chram-India.jpg", "history": "Pattachitra is presented here as a representative folk art entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Pattachitra its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Pattachitra.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}], "Crafts & Handicrafts": [{"id": 1034, "name": "Naga Bamboo Craft", "category": "Crafts & Handicrafts", "location": "Assam", "region": "East", "risk": 34, "riskLabel": "Low Risk", "theme": "crafts-handicrafts", "image": "https://www.worldatlas.com/r/w1200/upload/5e/39/8d/amber-fort.jpg", "history": "Naga Bamboo Craft is presented here as a representative crafts & handicrafts entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Naga Bamboo Craft its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Naga Bamboo Craft.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1035, "name": "Kashmir Papier-Mâché", "category": "Crafts & Handicrafts", "location": "Maharashtra", "region": "Northeast", "risk": 48, "riskLabel": "Moderate Risk", "theme": "crafts-handicrafts", "image": "https://strive.lshtm.ac.uk/sites/strive.lshtm.ac.uk/files/styles/photo-large/public/photos/lagori.jpg?itok=QS1EGQH6", "history": "Kashmir Papier-Mâché is presented here as a representative crafts & handicrafts entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Kashmir Papier-Mâché its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Kashmir Papier-Mâché.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1036, "name": "Kutch Embroidery", "category": "Crafts & Handicrafts", "location": "Odisha", "region": "South", "risk": 66, "riskLabel": "Needs Documentation", "theme": "crafts-handicrafts", "image": "https://bangalore.explocity.com/media/media/events/PAVAKATHAKALI_Bhima_and_Draupadi_in_Kalyanasougandhikam_-_Natanakairali.jpg", "history": "Kutch Embroidery is presented here as a representative crafts & handicrafts entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Kutch Embroidery its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Kutch Embroidery.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}], "Festivals & Rituals": [{"id": 1037, "name": "Chhath Puja", "category": "Festivals & Rituals", "location": "Odisha", "region": "Northeast", "risk": 34, "riskLabel": "Low Risk", "theme": "festivals-rituals", "image": "https://bangalore.explocity.com/media/media/events/PAVAKATHAKALI_Bhima_and_Draupadi_in_Kalyanasougandhikam_-_Natanakairali.jpg", "history": "Chhath Puja is presented here as a representative festivals & rituals entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Chhath Puja its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Chhath Puja.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1038, "name": "Hornbill Festival", "category": "Festivals & Rituals", "location": "Tamil Nadu", "region": "South", "risk": 48, "riskLabel": "Moderate Risk", "theme": "festivals-rituals", "image": "https://www.artofit.org/image-gallery/221098662946562991/burgundy-colour-silk-embroidered-saree/", "history": "Hornbill Festival is presented here as a representative festivals & rituals entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Hornbill Festival its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Hornbill Festival.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1039, "name": "Onam Floral Pookalam", "category": "Festivals & Rituals", "location": "Goa", "region": "Central", "risk": 66, "riskLabel": "Needs Documentation", "theme": "festivals-rituals", "image": "https://www.jagranimages.com/images/14_02_2019-teejan_bai_18950214.jpg", "history": "Onam Floral Pookalam is presented here as a representative festivals & rituals entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Onam Floral Pookalam its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Onam Floral Pookalam.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}], "Folk Theatre": [{"id": 1040, "name": "Rajasthani Kathputli", "category": "Folk Theatre", "location": "Goa", "region": "South", "risk": 34, "riskLabel": "Low Risk", "theme": "folk-theatre", "image": "https://www.telegraphindia.com/my-kolkata/lifestyle/puppet-theatre-the-stage-where-humans-and-puppets-meet/cid/1949260", "history": "Rajasthani Kathputli is presented here as a representative folk theatre entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Rajasthani Kathputli its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Rajasthani Kathputli.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1041, "name": "Pavakathakali", "category": "Folk Theatre", "location": "Kerala", "region": "Central", "risk": 48, "riskLabel": "Moderate Risk", "theme": "folk-theatre", "image": "https://bangalore.explocity.com/media/media/events/PAVAKATHAKALI_Bhima_and_Draupadi_in_Kalyanasougandhikam_-_Natanakairali.jpg", "history": "Pavakathakali is presented here as a representative folk theatre entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Pavakathakali its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Pavakathakali.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1042, "name": "Nautanki", "category": "Folk Theatre", "location": "Uttar Pradesh", "region": "North", "risk": 66, "riskLabel": "Needs Documentation", "theme": "folk-theatre", "image": "https://www.telegraphindia.com/my-kolkata/lifestyle/puppet-theatre-the-stage-where-humans-and-puppets-meet/cid/1949260", "history": "Nautanki is presented here as a representative folk theatre entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Nautanki its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Nautanki.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}], "Traditional Clothing": [{"id": 1043, "name": "Banarasi Weaving", "category": "Traditional Clothing", "location": "Uttar Pradesh", "region": "Central", "risk": 34, "riskLabel": "Low Risk", "theme": "traditional-clothing", "image": "https://www.artofit.org/image-gallery/221098662946562991/burgundy-colour-silk-embroidered-saree/", "history": "Banarasi Weaving is presented here as a representative traditional clothing entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Banarasi Weaving its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Banarasi Weaving.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1044, "name": "Kutch Bandhani", "category": "Traditional Clothing", "location": "Gujarat", "region": "North", "risk": 48, "riskLabel": "Moderate Risk", "theme": "traditional-clothing", "image": "https://www.artofit.org/image-gallery/221098662946562991/burgundy-colour-silk-embroidered-saree/", "history": "Kutch Bandhani is presented here as a representative traditional clothing entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Kutch Bandhani its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Kutch Bandhani.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1045, "name": "Assamese Mekhela Chador", "category": "Traditional Clothing", "location": "Punjab", "region": "East", "risk": 66, "riskLabel": "Needs Documentation", "theme": "traditional-clothing", "image": "https://www.artofit.org/image-gallery/221098662946562991/burgundy-colour-silk-embroidered-saree/", "history": "Assamese Mekhela Chador is presented here as a representative traditional clothing entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Assamese Mekhela Chador its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Assamese Mekhela Chador.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}], "Oral Stories & Legends": [{"id": 1046, "name": "Kumaoni Folktales", "category": "Oral Stories & Legends", "location": "Punjab", "region": "North", "risk": 34, "riskLabel": "Low Risk", "theme": "oral-stories-legends", "image": "https://bangalore.explocity.com/media/media/events/PAVAKATHAKALI_Bhima_and_Draupadi_in_Kalyanasougandhikam_-_Natanakairali.jpg", "history": "Kumaoni Folktales is presented here as a representative oral stories & legends entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Kumaoni Folktales its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Kumaoni Folktales.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1047, "name": "Alha Ballad", "category": "Oral Stories & Legends", "location": "West Bengal", "region": "East", "risk": 48, "riskLabel": "Moderate Risk", "theme": "oral-stories-legends", "image": "https://www.artofit.org/image-gallery/221098662946562991/burgundy-colour-silk-embroidered-saree/", "history": "Alha Ballad is presented here as a representative oral stories & legends entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Alha Ballad its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Alha Ballad.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1048, "name": "Bideshiya Stories", "category": "Oral Stories & Legends", "location": "Nagaland", "region": "South", "risk": 66, "riskLabel": "Needs Documentation", "theme": "oral-stories-legends", "image": "https://www.jagranimages.com/images/14_02_2019-teejan_bai_18950214.jpg", "history": "Bideshiya Stories is presented here as a representative oral stories & legends entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Bideshiya Stories its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Bideshiya Stories.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}], "Languages & Dialects": [{"id": 1049, "name": "Maithili", "category": "Languages & Dialects", "location": "Nagaland", "region": "East", "risk": 34, "riskLabel": "Low Risk", "theme": "languages-dialects", "image": "https://img.topky.sk/cestovky/big/2857599.jpg/chram-India.jpg", "history": "Maithili is presented here as a representative languages & dialects entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Maithili its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Maithili.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1050, "name": "Bhojpuri", "category": "Languages & Dialects", "location": "Karnataka", "region": "South", "risk": 48, "riskLabel": "Moderate Risk", "theme": "languages-dialects", "image": "https://www.worldatlas.com/r/w1200/upload/5e/39/8d/amber-fort.jpg", "history": "Bhojpuri is presented here as a representative languages & dialects entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Bhojpuri its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Bhojpuri.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1051, "name": "Kumaoni", "category": "Languages & Dialects", "location": "Madhya Pradesh", "region": "North", "risk": 66, "riskLabel": "Needs Documentation", "theme": "languages-dialects", "image": "https://strive.lshtm.ac.uk/sites/strive.lshtm.ac.uk/files/styles/photo-large/public/photos/lagori.jpg?itok=QS1EGQH6", "history": "Kumaoni is presented here as a representative languages & dialects entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Kumaoni its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Kumaoni.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}], "Music & Instruments": [{"id": 1052, "name": "Rajasthani Sarangi", "category": "Music & Instruments", "location": "Madhya Pradesh", "region": "South", "risk": 34, "riskLabel": "Low Risk", "theme": "music-instruments", "image": "https://img.topky.sk/cestovky/big/2857599.jpg/chram-India.jpg", "history": "Rajasthani Sarangi is presented here as a representative music & instruments entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Rajasthani Sarangi its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Rajasthani Sarangi.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1053, "name": "Assamese Pepa", "category": "Music & Instruments", "location": "Uttarakhand", "region": "North", "risk": 48, "riskLabel": "Moderate Risk", "theme": "music-instruments", "image": "https://www.worldatlas.com/r/w1200/upload/5e/39/8d/amber-fort.jpg", "history": "Assamese Pepa is presented here as a representative music & instruments entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Assamese Pepa its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Assamese Pepa.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1054, "name": "Kerala Chenda", "category": "Music & Instruments", "location": "Jharkhand", "region": "Northeast", "risk": 66, "riskLabel": "Needs Documentation", "theme": "music-instruments", "image": "https://strive.lshtm.ac.uk/sites/strive.lshtm.ac.uk/files/styles/photo-large/public/photos/lagori.jpg?itok=QS1EGQH6", "history": "Kerala Chenda is presented here as a representative music & instruments entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Kerala Chenda its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Kerala Chenda.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}], "Architecture": [{"id": 1055, "name": "Stepwells of Gujarat", "category": "Architecture", "location": "Jharkhand", "region": "North", "risk": 34, "riskLabel": "Low Risk", "theme": "architecture", "image": "https://www.artofit.org/image-gallery/221098662946562991/burgundy-colour-silk-embroidered-saree/", "history": "Stepwells of Gujarat is presented here as a representative architecture entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Stepwells of Gujarat its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Stepwells of Gujarat.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1056, "name": "Chettinad Mansions", "category": "Architecture", "location": "Telangana", "region": "Northeast", "risk": 48, "riskLabel": "Moderate Risk", "theme": "architecture", "image": "https://www.jagranimages.com/images/14_02_2019-teejan_bai_18950214.jpg", "history": "Chettinad Mansions is presented here as a representative architecture entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Chettinad Mansions its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Chettinad Mansions.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1057, "name": "Traditional Kerala Nalukettu", "category": "Architecture", "location": "Himachal Pradesh", "region": "East", "risk": 66, "riskLabel": "Needs Documentation", "theme": "architecture", "image": "https://www.caleidoscope.in/wp-content/uploads/2022/03/Folk-Dances-of-Rajasthan.jpg", "history": "Traditional Kerala Nalukettu is presented here as a representative architecture entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Traditional Kerala Nalukettu its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Traditional Kerala Nalukettu.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}], "Nature & Sacred Landscapes": [{"id": 1058, "name": "Sundarbans", "category": "Nature & Sacred Landscapes", "location": "Himachal Pradesh", "region": "Northeast", "risk": 34, "riskLabel": "Low Risk", "theme": "nature-sacred-landscapes", "image": "https://strive.lshtm.ac.uk/sites/strive.lshtm.ac.uk/files/styles/photo-large/public/photos/lagori.jpg?itok=QS1EGQH6", "history": "Sundarbans is presented here as a representative nature & sacred landscapes entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Sundarbans its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Sundarbans.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1059, "name": "Valley of Flowers", "category": "Nature & Sacred Landscapes", "location": "Meghalaya", "region": "East", "risk": 48, "riskLabel": "Moderate Risk", "theme": "nature-sacred-landscapes", "image": "https://bangalore.explocity.com/media/media/events/PAVAKATHAKALI_Bhima_and_Draupadi_in_Kalyanasougandhikam_-_Natanakairali.jpg", "history": "Valley of Flowers is presented here as a representative nature & sacred landscapes entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Valley of Flowers its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Valley of Flowers.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}, {"id": 1060, "name": "Sacred Groves of Meghalaya", "category": "Nature & Sacred Landscapes", "location": "Bihar", "region": "North", "risk": 66, "riskLabel": "Needs Documentation", "theme": "nature-sacred-landscapes", "image": "https://www.artofit.org/image-gallery/221098662946562991/burgundy-colour-silk-embroidered-saree/", "history": "Sacred Groves of Meghalaya is presented here as a representative nature & sacred landscapes entry for the Meri Virasat discovery collection.", "story": "Community memory, practice and place give Sacred Groves of Meghalaya its living character and help connect generations.", "tradition": "This record highlights the skills, customs or knowledge associated with Sacred Groves of Meghalaya.", "people": "Community practitioners and local custodians keep this heritage alive.", "evidence": "Showcase entry — replace or enrich this record with verified community documentation in the database."}]};
+let activeCategory = 'All Sections';
+const ALL_SECTION_POOL = Object.values(CATEGORY_SHOWCASE).flat();
+const REGION_PLACES = [
+  {name:'North', region:'North', query:'north india,heritage,fort', lock:2101},
+  {name:'South', region:'South', query:'south india,temple,heritage', lock:2102},
+  {name:'East', region:'East', query:'east india,heritage,temple', lock:2103},
+  {name:'West', region:'West', query:'west india,heritage,fort', lock:2104},
+  {name:'Central', region:'Central', query:'central india,heritage,monument', lock:2105},
+  {name:'Northeast', region:'Northeast', query:'northeast india,heritage,landscape', lock:2106},
+  {name:'Jammu & Kashmir', region:'North', query:'kashmir,india,mountains', lock:2107},
+  {name:'Islands', region:'South', query:'andaman,india,island', lock:2108},
+  {name:'Himalayas', region:'North', query:'himalaya,india,mountains', lock:2109},
+  {name:'Desert', region:'West', query:'rajasthan,india,desert', lock:2110},
+  {name:'Coastal', region:'South', query:'india,coast,beach', lock:2111},
+  {name:'Tribal Regions', region:'Central', query:'india,tribal,culture', lock:2112}
+];
+
+// Real-photo URLs are assigned per individual heritage record.  The unique lock/query
+// combination prevents one category from visually repeating the same photograph.
+const PHOTO_QUERY = {
+ 'Folk Songs':['india,folk,singer','india,folk,music','india,traditional,song'],
+ 'Folk Dances':['india,folk,dance','india,traditional,dance','india,cultural,dance'],
+ 'Recipes & Food':['india,indian,food','india,traditional,food','india,street,food'],
+ 'Childhood Games':['india,children,traditional,game','india,children,play','india,rural,children'],
+ 'Temples':['india,temple,architecture','india,hindu,temple','india,ancient,temple'],
+ 'Churches':['india,church,heritage','india,church,architecture','india,cathedral'],
+ 'Mosques':['india,mosque,architecture','india,mosque,heritage','india,masjid'],
+ 'Gurudwaras':['india,gurudwara','india,sikh,temple','india,golden,temple'],
+ 'Old Places':['india,heritage,old,place','india,historic,street','india,ancient,ruins'],
+ 'Forts & Palaces':['india,fort,heritage','india,palace,rajasthan','india,fort,architecture'],
+ 'Folk Art':['india,folk,art,painting','india,madhubani,art','india,warli,art'],
+ 'Crafts & Handicrafts':['india,handicraft,artisan','india,traditional,craft','india,pottery,craft'],
+ 'Festivals & Rituals':['india,festival,culture','india,traditional,festival','india,ritual,culture'],
+ 'Folk Theatre':['india,folk,theatre','india,traditional,theatre','india,puppet,show'],
+ 'Traditional Clothing':['india,traditional,textile','india,saree,culture','india,traditional,dress'],
+ 'Oral Stories & Legends':['india,storytelling,culture','india,folk,storyteller','india,oral,tradition'],
+ 'Languages & Dialects':['india,language,script','india,indian,writing','india,regional,culture'],
+ 'Music & Instruments':['india,traditional,instrument','india,indian,musician','india,folk,musician'],
+ 'Architecture':['india,heritage,architecture','india,traditional,building','india,stepwell,architecture'],
+ 'Nature & Sacred Landscapes':['india,sacred,landscape','india,river,heritage','india,mountain,landscape']
+};
+let photoCounter=0;
+function realPhotoFor(record, index=0){
+  const q=(PHOTO_QUERY[record.category]||['india,heritage'])[index%3];
+  const lock=7000 + (Number(record.id)||0) + index*137;
+  return `https://loremflickr.com/900/560/${encodeURIComponent(q)}?lock=${lock}`;
+}
+function prepareShowcasePhotos(){
+  Object.entries(CATEGORY_SHOWCASE).forEach(([cat,items])=>items.forEach((h,i)=>{h.image=realPhotoFor(h,i);}));
+}
+prepareShowcasePhotos();
+
+function categoryIcon(name){ return HERITAGE_CATEGORIES.find(c=>c.name===name)?.icon || 'fa-tag'; }
+function categorySlug(name){ return HERITAGE_CATEGORIES.find(c=>c.name===name)?.name.toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]+/g,'-').replace(/-$/,'') || ''; }
+function categoryClass(name){ return 'theme-'+categorySlug(name); }
+function renderCategoryOptions(){
+  const select=document.getElementById('f_category'); if(!select) return;
+  const current=select.value;
+  select.innerHTML=HERITAGE_CATEGORIES.map(c=>`<option value="${c.name}">${c.name}</option>`).join('');
+  if(current && CATEGORY_NAMES.includes(current)) select.value=current;
+}
+function renderCategoryNav(){
+  const nav=document.getElementById('categoryNav'); if(!nav) return;
+  const allChip=`<button class="category-chip ${activeCategory==='All Sections'?'active':''}" style="--cat-accent:#9E3B1B" onclick="filterCategory('All Sections')">All Sections</button>`;
+  nav.innerHTML=allChip+HERITAGE_CATEGORIES.map(c=>`<button class="category-chip ${activeCategory===c.name?'active':''}" style="--cat-accent:#9E3B1B" onclick="filterCategory('${c.name.replace(/'/g,"\\'")}')">${c.name}</button>`).join('');
+  nav.querySelectorAll('.category-chip').forEach((b,i)=>{
+    if(i===0)return;
+    const c=HERITAGE_CATEGORIES[i-1];
+    const accent=getComputedStyle(document.querySelector('.theme-'+categorySlug(c.name))||document.body).getPropertyValue('--cat-accent');
+    if(accent)b.style.setProperty('--cat-accent',accent);
+  });
+}
+function showcaseCard(h){
+ const c=categoryClass(h.category);
+ return `<article class="showcase-card ${c}" onclick='openModalRecord(${JSON.stringify(h).replace(/'/g,"&#39;")})'>
+   <div class="showcase-photo"><img src="${h.image}" alt="${h.name}" loading="lazy" onerror="this.onerror=null;this.src=IMAGE_ASSETS.hero"><div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent"></div><span class="absolute left-3 bottom-3 text-[11px] font-bold text-white bg-black/30 backdrop-blur px-2.5 py-1 rounded-full">${h.location}</span></div>
+   <div class="theme-band"></div><div class="p-4"><p class="text-[11px] font-bold uppercase tracking-wider" style="color:var(--cat-accent)">${h.category}</p><h4 class="font-display font-semibold text-xl mt-1">${h.name}</h4><p class="text-sm text-espresso/55 mt-1">A featured heritage story to explore.</p><div class="mt-4 text-sm font-semibold" style="color:var(--cat-accent)">View story <i class="fa-solid fa-arrow-right ml-1"></i></div></div>
+ </article>`;
+}
+function shuffle(arr){
+ const a=[...arr];
+ for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a;
+}
+function renderCategoryShowcase(){
+ const grid=document.getElementById('categoryShowcase');
+ if(activeCategory==='All Sections'){
+   const data=shuffle(ALL_SECTION_POOL).slice(0,12);
+   document.getElementById('categoryShowcaseTitle').textContent='All Sections';
+   document.getElementById('categoryShowcaseDesc').textContent='A fresh mix of heritage from different categories — refreshed each time you choose All Sections.';
+   document.getElementById('clearCategoryFilter').classList.add('hidden');
+   grid.className='grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mt-5';
+   grid.innerHTML=data.map(showcaseCard).join('');
+ } else {
+   const cat=HERITAGE_CATEGORIES.find(c=>c.name===activeCategory)||HERITAGE_CATEGORIES[0];
+   const data=(CATEGORY_SHOWCASE[activeCategory]||[]).slice(0,3);
+   document.getElementById('categoryShowcaseTitle').textContent=activeCategory;
+   document.getElementById('categoryShowcaseDesc').textContent=cat.desc;
+   document.getElementById('clearCategoryFilter').classList.remove('hidden');
+   grid.className='grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-5';
+   grid.innerHTML=data.map(showcaseCard).join('');
+ }
+ renderCategoryNav();
+}
+function filterCategory(category){ activeCategory=category; renderCategoryShowcase(); document.getElementById('categories')?.scrollIntoView({behavior:'smooth',block:'start'}); }
+document.getElementById('clearCategoryFilter')?.addEventListener('click',()=>filterCategory('All Sections'));
+renderCategoryOptions(); renderCategoryShowcase();
+
+/* ============ REGION PHOTO BUTTONS ============ */
+function renderRegionCards(filter='all'){
+ const grid=document.getElementById('regionCards'); if(!grid)return;
+ const items=filter==='all'?REGION_PLACES:REGION_PLACES.filter(r=>r.region===filter);
+ grid.innerHTML=items.map(r=>`<button class="region-place-btn" onclick="filterFeatured('${r.region}')" aria-label="Explore ${r.name}">
+   <span class="region-photo" style="background-image:url('https://loremflickr.com/900/560/${encodeURIComponent(r.query)}?lock=${r.lock}')"></span>
+   <span class="region-shade"></span>
+   <span class="region-copy"><span class="region-pin"><i class="fa-solid fa-location-dot"></i></span><span class="font-display font-semibold text-lg">${r.name}</span><span class="block text-[11px] text-sand/80 mt-0.5">Explore heritage <i class="fa-solid fa-arrow-right ml-1"></i></span></span>
+ </button>`).join('');
+}
+renderRegionCards('all');
+
+/* ============ MAP + FEATURED LIST ============ */
+const mapSvg = document.getElementById('indiaMap');
+HERITAGE.forEach(h=>{
+  const cx = (h.x/100)*300, cy = (h.y/100)*340;
+  const circle = document.createElementNS('http://www.w3.org/2000/svg','circle');
+  circle.setAttribute('cx', cx); circle.setAttribute('cy', cy); circle.setAttribute('r', 8);
+  circle.setAttribute('fill', riskColor(h.risk));
+  circle.setAttribute('fill-opacity', '0.85');
+  circle.setAttribute('stroke', '#FDFBF7'); circle.setAttribute('stroke-width','2');
+  circle.classList.add('hotspot');
+  circle.dataset.region = h.region;
+  circle.addEventListener('click', ()=> filterFeatured(h.region));
+  mapSvg.appendChild(circle);
+});
+
+let activeFeaturedRegion = 'all';
+function filterFeatured(region){
+  activeFeaturedRegion = (activeFeaturedRegion===region) ? 'all' : region;
+  renderFeatured();
+}
+function renderFeatured(){
+  const list = document.getElementById('featuredList');
+  const items = activeFeaturedRegion==='all' ? HERITAGE : HERITAGE.filter(h=>h.region===activeFeaturedRegion);
+  const heading = activeFeaturedRegion==='all' ? 'Featured heritage' : `Featured in ${activeFeaturedRegion} India`;
+  list.innerHTML = `<p class="text-xs font-semibold text-espresso/50 mb-1">${heading} · click a hotspot to filter</p>` +
+    items.map(h=>`
+      <div class="flex items-center gap-3 bg-white rounded-xl border border-espresso/10 p-2.5 cursor-pointer hover:border-terracotta/40 transition-colors" onclick="openModal(${h.id})">
+        <img src="${h.image}" alt="" class="w-14 h-12 rounded-lg object-cover shrink-0" onerror="this.onerror=null;this.src=IMAGE_ASSETS.hero;">
+        <div class="flex-1 min-w-0">
+          <p class="text-sm font-semibold truncate">${h.name}</p>
+          <p class="text-xs text-espresso/50">${h.location}</p>
+        </div>
+        <span class="text-xs font-semibold text-espresso/60 shrink-0">${h.risk}</span>
+      </div>
+    `).join('');
+}
+renderFeatured();
+
+/* ============ MODAL ============ */
+let currentHeritage = null;
+let currentTab = 'history';
+
+function openModalRecord(record){
+  currentHeritage = record;
+  if(!currentHeritage) return;
+  populateHeritageModal();
+}
+function openModal(id){
+  currentHeritage = HERITAGE.find(h=>h.id===id);
+  if(!currentHeritage) return;
+  populateHeritageModal();
+}
+function populateHeritageModal(){
+  const frame=document.getElementById('modalFrame');
+  frame.className='bg-sand rounded-2xl w-full max-w-3xl my-6 overflow-hidden relative transition-all duration-300 theme-frame '+categoryClass(currentHeritage.category);
+  document.getElementById('m_category').textContent = currentHeritage.category;
+  document.getElementById('m_category').style.color = 'var(--cat-accent)';
+  document.getElementById('m_category').style.background = 'color-mix(in srgb, var(--cat-accent) 12%, transparent)';
+  document.getElementById('m_name').textContent = currentHeritage.name;
+  document.getElementById('m_location').innerHTML = `<i class="fa-solid fa-location-dot mr-1"></i>${currentHeritage.location} · ${currentHeritage.region} India`;
+  const modalImg = document.getElementById('m_image');
+  modalImg.onerror = ()=>{ modalImg.onerror=null; modalImg.src=IMAGE_ASSETS.hero; };
+  modalImg.src = currentHeritage.image || IMAGE_ASSETS.hero;
+  modalImg.alt = currentHeritage.name;
+  document.getElementById('riskLabel').textContent = `${currentHeritage.risk} — ${currentHeritage.riskLabel}`;
+
+  const circ = 2*Math.PI*32;
+  const arc = document.getElementById('riskArc');
+  arc.setAttribute('stroke-dasharray', circ);
+  arc.setAttribute('stroke', riskColor(currentHeritage.risk));
+  document.getElementById('riskNum').textContent = currentHeritage.risk;
+  arc.setAttribute('stroke-dashoffset', circ);
+  setTimeout(()=> arc.setAttribute('stroke-dashoffset', circ - (currentHeritage.risk/100)*circ), 60);
+
+  setTheme(currentHeritage.theme || 'default');
+  currentTab = 'history';
+  document.querySelectorAll('#modalTabs button').forEach(b=>b.classList.toggle('active', b.dataset.tab==='history'));
+  renderTabContent();
+
+  document.getElementById('heritageModal').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(){
+  document.getElementById('heritageModal').classList.add('hidden');
+  document.body.style.overflow = '';
+}
+function setTheme(theme){
+  const frame = document.getElementById('modalFrame');
+  frame.classList.remove('frame-default','frame-madhubani','frame-warli');
+  frame.classList.add('frame-'+theme);
+  document.querySelectorAll('.theme-btn').forEach(b=>b.classList.remove('bg-terracotta','text-sand'));
+}
+document.getElementById('modalTabs').addEventListener('click', e=>{
+  const btn = e.target.closest('button[data-tab]');
+  if(!btn) return;
+  currentTab = btn.dataset.tab;
+  document.querySelectorAll('#modalTabs button').forEach(b=>b.classList.toggle('active', b===btn));
+  renderTabContent();
+});
+function renderTabContent(){
+  document.getElementById('modalTabContent').textContent = currentHeritage[currentTab];
+}
+
+/* ============ ADD HERITAGE FORM (open via hero CTA) ============ */
+function openAddHeritage(){
+  document.getElementById('add-heritage').scrollIntoView({behavior:'smooth'});
+}
+
+let step = 1;
+const uploads = { photo:false, audio:false, video:false };
+
+function showStep(n){
+  document.querySelectorAll('.form-step').forEach(el=> el.classList.toggle('hidden', +el.dataset.step !== n));
+  document.querySelectorAll('.step-item').forEach(el=>{
+    const s = +el.dataset.step;
+    const dot = el.querySelector('.step-dot');
+    if(s < n){ dot.className='step-dot w-8 h-8 rounded-full bg-teal text-sand flex items-center justify-center text-xs font-bold'; dot.innerHTML='<i class="fa-solid fa-check text-[10px]"></i>'; }
+    else if(s === n){ dot.className='step-dot w-8 h-8 rounded-full bg-terracotta text-sand flex items-center justify-center text-xs font-bold'; dot.textContent=s; }
+    else { dot.className='step-dot w-8 h-8 rounded-full bg-espresso/10 text-espresso/50 flex items-center justify-center text-xs font-bold'; dot.textContent=s; }
+  });
+  document.getElementById('prevBtn').classList.toggle('hidden', n===1);
+  document.getElementById('nextBtn').classList.toggle('hidden', n===4);
+  document.getElementById('submitBtn').classList.toggle('hidden', n!==4);
+  if(n===4) buildReview();
+}
+function nextStep(){ if(step<4){ step++; showStep(step);} }
+function prevStep(){ if(step>1){ step--; showStep(step);} }
+
+function simulateUpload(type){
+  uploads[type] = true;
+  const labels = {photo:'2 photos added', audio:'Audio clip recorded (5:00)', video:'1 video added'};
+  document.getElementById(type+'_status').textContent = labels[type];
+  document.getElementById(type+'_status').classList.add('text-teal','font-semibold');
+}
+
+const pinMap = document.getElementById('pinMap');
+let pinCoord = null;
+pinMap.addEventListener('click', e=>{
+  const rect = pinMap.getBoundingClientRect();
+  const x = ((e.clientX-rect.left)/rect.width*100).toFixed(1);
+  const y = ((e.clientY-rect.top)/rect.height*100).toFixed(1);
+  pinCoord = {x,y};
+  const marker = document.getElementById('pinMarker');
+  marker.style.left = x+'%'; marker.style.top = y+'%';
+  marker.classList.remove('hidden');
+  document.getElementById('pinHint').classList.add('hidden');
+  document.getElementById('pinCoords').textContent = `Pin dropped — approx. lat/lng ref ${x}, ${y}`;
+});
+
+function buildReview(){
+  const name = document.getElementById('f_name').value || 'Untitled record';
+  const cat = document.getElementById('f_category').value;
+  const loc = document.getElementById('f_location').value || 'Not specified';
+  const desc = document.getElementById('f_desc').value;
+
+  const dialects = ['Maithili','Bhojpuri','Warli dialect','Konkani','Assamese','Kannada'];
+  const dialect = dialects[Math.floor(Math.random()*dialects.length)];
+  const risk = uploads.audio ? Math.floor(55+Math.random()*35) : Math.floor(30+Math.random()*40);
+
+  const tags = [
+    { label:`Category: ${cat}`, icon:'fa-tag' },
+    uploads.audio ? { label:`Speech-to-text extracted (${dialect} detected)`, icon:'fa-waveform' } : null,
+    uploads.photo ? { label:'Visual style: hand-painted / folk motif', icon:'fa-image' } : null,
+    { label:`Estimated risk score: ${risk}`, icon:'fa-triangle-exclamation' },
+    pinCoord ? { label:'Location pin verified', icon:'fa-location-dot' } : null,
+  ].filter(Boolean);
+
+  document.getElementById('aiTags').innerHTML = tags.map(t=>`
+    <span class="bg-white border border-espresso/10 px-3 py-1.5 rounded-full flex items-center gap-1.5"><i class="fa-solid ${t.icon} text-terracotta"></i>${t.label}</span>
+  `).join('');
+
+  document.getElementById('reviewSummary').innerHTML = `
+    <p><span class="font-semibold">Name:</span> ${name}</p>
+    <p><span class="font-semibold">Location:</span> ${loc}</p>
+    <p><span class="font-semibold">Description:</span> ${desc || '—'}</p>
+    <p><span class="font-semibold">Media attached:</span> ${Object.entries(uploads).filter(([,v])=>v).map(([k])=>k).join(', ') || 'None yet'}</p>
+  `;
+  window._lastRisk = risk; window._lastDialect = dialect; window._lastName = name;
+}
+
+function submitHeritage(){
+  showToast(`"${window._lastName || 'Your record'}" submitted · AI detected ${window._lastDialect || 'a regional dialect'} · Risk score ${window._lastRisk ?? '—'}`);
+  setTimeout(()=>{
+    step = 1; showStep(1);
+    document.getElementById('f_name').value=''; document.getElementById('f_location').value=''; document.getElementById('f_desc').value='';
+    uploads.photo=uploads.audio=uploads.video=false;
+    ['photo','audio','video'].forEach(t=>{ const el=document.getElementById(t+'_status'); el.classList.remove('text-teal','font-semibold'); el.textContent = t==='audio' ? 'Oral story / folk song' : 'Tap to simulate upload'; });
+    document.getElementById('pinMarker').classList.add('hidden');
+    document.getElementById('pinHint').classList.remove('hidden');
+    document.getElementById('pinCoords').textContent = '';
+    pinCoord = null;
+  }, 600);
+}
+showStep(1);
+
+function showToast(msg){
+  const toast = document.getElementById('toast');
+  toast.innerHTML = `
+    <div class="toast-enter bg-espresso text-sand rounded-xl shadow-2xl px-5 py-4 flex items-start gap-3">
+      <i class="fa-solid fa-circle-check text-teal text-lg mt-0.5"></i>
+      <div class="text-sm leading-snug"><p class="font-semibold mb-0.5">Heritage record saved</p><p class="text-sand/70">${msg}</p></div>
+    </div>`;
+  toast.classList.remove('hidden');
+  clearTimeout(window._toastTimer);
+  window._toastTimer = setTimeout(()=> toast.classList.add('hidden'), 5000);
+}
+
+/* ============ SEARCH ============ */
+const searchInput = document.getElementById('globalSearch');
+const searchResults = document.getElementById('searchResults');
+searchInput.addEventListener('input', ()=>{
+  const q = searchInput.value.trim().toLowerCase();
+  if(!q){ searchResults.classList.add('hidden'); return; }
+  const matches = HERITAGE.filter(h => (h.name+h.location+h.category+h.region).toLowerCase().includes(q));
+  if(!matches.length){ searchResults.innerHTML = `<p class="p-3 text-xs text-espresso/50">No matches found.</p>`; }
+  else {
+    searchResults.innerHTML = matches.map(h=>`
+      <button onclick="openModal(${h.id}); searchResults.classList.add('hidden'); searchInput.value='';" class="w-full text-left px-4 py-2.5 hover:bg-sand2 flex items-center justify-between gap-2">
+        <span><span class="text-sm font-semibold">${h.name}</span><span class="block text-xs text-espresso/50">${h.location}</span></span>
+        <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full ${riskBg(h.risk)}">${h.risk}</span>
+      </button>`).join('');
+  }
+  searchResults.classList.remove('hidden');
+});
+document.addEventListener('click', e=>{ if(!e.target.closest('#globalSearch') && !e.target.closest('#searchResults')) searchResults.classList.add('hidden'); });
+
+/* ============ MOBILE MENU ============ */
+document.getElementById('mobileMenuBtn').addEventListener('click', ()=>{
+  document.getElementById('mobileMenu').classList.toggle('hidden');
+});
+
+
+/* ============ SUPABASE / DATABASE INTEGRATION ============ */
+let sb = null;
+let authMode = 'signin';
+let currentUser = null;
+const DB_ENABLED = !!(window.MV_SUPABASE?.url && window.MV_SUPABASE?.publishableKey && !String(window.MV_SUPABASE.url).includes('YOUR_') && !String(window.MV_SUPABASE.publishableKey).includes('YOUR_'));
+
+async function loadCategoryCatalog(){
+  if(!sb) return;
+  const {data,error}=await sb.from('heritage_categories').select('name,description,icon,is_active,sort_order').eq('is_active',true).order('sort_order',{ascending:true}).order('name',{ascending:true});
+  if(error || !data?.length) return;
+  HERITAGE_CATEGORIES=[...HERITAGE_CATEGORIES.filter(local=>data.some(db=>db.name===local.name)),...data.filter(db=>!HERITAGE_CATEGORIES.some(local=>local.name===db.name)).map(c=>({name:c.name,desc:c.description||'Community heritage',icon:c.icon||'fa-tag'}))];
+  renderCategoryOptions(); renderCategoryShowcase();
+}
+
+function initSupabase(){
+  if(!DB_ENABLED || !window.supabase?.createClient) return;
+  sb = window.supabase.createClient(window.MV_SUPABASE.url, window.MV_SUPABASE.publishableKey, {
+    auth:{persistSession:true, autoRefreshToken:true, detectSessionInUrl:true}
+  });
+  sb.auth.getSession().then(({data})=>updateAuthUI(data.session?.user || null));
+  loadCategoryCatalog();
+  sb.auth.onAuthStateChange((_event, session)=>updateAuthUI(session?.user || null));
+  loadPublishedHeritage();
+}
+
+function updateAuthUI(user){
+  currentUser = user;
+  const btn = document.getElementById('accountBtnText');
+  if(btn) btn.textContent = user ? (user.user_metadata?.full_name || user.email?.split('@')[0] || 'Account') : 'Sign in';
+  const signOut = document.getElementById('signOutBtn');
+  const submit = document.getElementById('authSubmit');
+  const title = document.getElementById('authTitle');
+  if(signOut) signOut.classList.toggle('hidden', !user);
+  if(submit) submit.classList.toggle('hidden', !!user);
+  if(title && user) title.textContent = 'Your account';
+}
+
+function openAuthModal(){
+  const m=document.getElementById('authModal'); m.classList.remove('hidden'); m.style.display='flex';
+  setAuthMode(currentUser ? 'signin' : authMode);
+}
+function closeAuthModal(){ const m=document.getElementById('authModal'); m.classList.add('hidden'); m.style.display='none'; }
+function setAuthMode(mode){
+  authMode=mode;
+  document.getElementById('authTitle').textContent = mode==='signin' ? 'Sign in' : 'Create account';
+  document.getElementById('authName').classList.toggle('hidden', mode==='signin');
+  document.getElementById('authSignInTab').className = 'py-2 rounded-md text-sm font-semibold '+(mode==='signin'?'bg-white shadow-sm':'text-espresso/60');
+  document.getElementById('authSignUpTab').className = 'py-2 rounded-md text-sm font-semibold '+(mode==='signup'?'bg-white shadow-sm':'text-espresso/60');
+  document.getElementById('authMessage').textContent='';
+}
+async function submitAuth(){
+  if(!sb){ showToast('Database is not connected yet. Add your Supabase URL and publishable key in supabase-config.js.'); return; }
+  const email=document.getElementById('authEmail').value.trim();
+  const password=document.getElementById('authPassword').value;
+  const name=document.getElementById('authName').value.trim();
+  const msg=document.getElementById('authMessage');
+  if(!email || !password){ msg.textContent='Email and password are required.'; return; }
+  msg.textContent='Working...';
+  const result = authMode==='signup'
+    ? await sb.auth.signUp({email,password,options:{data:{full_name:name}}})
+    : await sb.auth.signInWithPassword({email,password});
+  if(result.error){ msg.textContent=result.error.message; return; }
+  msg.textContent = authMode==='signup' ? 'Account created. Check your email if confirmation is enabled.' : 'Signed in successfully.';
+  if(authMode==='signin' || result.data.session) setTimeout(closeAuthModal,500);
+}
+async function signOutUser(){ if(sb) await sb.auth.signOut(); closeAuthModal(); }
+
+function dbRowToHeritage(row, idx){
+  return {
+    id: row.id,
+    name: row.name,
+    category: row.category || 'Living Tradition',
+    region: row.region || 'North',
+    location: row.location || row.state || 'India',
+    risk: Number(row.risk_score ?? 50),
+    riskLabel: row.risk_label || (Number(row.risk_score ?? 50)>=70?'High Preservation Risk':Number(row.risk_score ?? 50)>=45?'Moderate Risk':'Low Risk'),
+    theme: row.theme || 'default',
+    image: row.image_url || IMAGE_ASSETS.hero,
+    x: Number(row.map_x ?? (20 + (idx*17)%65)),
+    y: Number(row.map_y ?? (20 + (idx*23)%65)),
+    history: row.history || row.description || 'Community-documented heritage record.',
+    story: row.story || row.description || 'A living story shared by the community.',
+    tradition: row.tradition || row.description || 'Traditional knowledge and cultural practice.',
+    people: row.people || 'Local community and heritage practitioners.',
+    evidence: row.evidence || 'Community-submitted record.'
+  };
+}
+
+async function loadPublishedHeritage(){
+  if(!sb) return;
+  const {data,error}=await sb.from('heritage').select('*').eq('status','published').order('created_at',{ascending:false});
+  if(error){ console.warn('Heritage load failed:',error.message); return; }
+  if(data?.length){
+    HERITAGE = data.map(dbRowToHeritage);
+    renderRegionCards('all');
+    renderFeatured();
+    renderMap();
+    renderCategoryOptions();
+    renderCategoryShowcase();
+  }
+}
+
+function renderMap(){
+  const mapSvg=document.getElementById('indiaMap'); if(!mapSvg) return;
+  mapSvg.querySelectorAll('.hotspot').forEach(n=>n.remove());
+  HERITAGE.forEach(h=>{
+    const cx=(h.x/100)*300, cy=(h.y/100)*340;
+    const circle=document.createElementNS('http://www.w3.org/2000/svg','circle');
+    circle.setAttribute('cx',cx); circle.setAttribute('cy',cy); circle.setAttribute('r',8);
+    circle.setAttribute('fill',riskColor(h.risk)); circle.setAttribute('fill-opacity','0.85'); circle.setAttribute('stroke','#FDFBF7'); circle.setAttribute('stroke-width','2');
+    circle.classList.add('hotspot'); circle.dataset.region=h.region; circle.addEventListener('click',()=>filterFeatured(h.region)); mapSvg.appendChild(circle);
+  });
+}
+
+const originalSubmitHeritage = submitHeritage;
+submitHeritage = async function(){
+  if(!sb){ originalSubmitHeritage(); return; }
+  if(!currentUser){ openAuthModal(); showToast('Please sign in before submitting a heritage record.'); return; }
+  const name=document.getElementById('f_name').value.trim();
+  const category=document.getElementById('f_category').value;
+  const location=document.getElementById('f_location').value.trim();
+  const description=document.getElementById('f_desc').value.trim();
+  if(!name || !location){ showToast('Please add the heritage name and location first.'); return; }
+  const risk=Number(window._lastRisk || 50);
+  let image_url=null;
+  if(window._selectedPhoto){
+    const file=window._selectedPhoto;
+    const safe=file.name.toLowerCase().replace(/[^a-z0-9._-]+/g,'-');
+    const path=`submissions/${currentUser.id}/${crypto.randomUUID()}-${safe}`;
+    const upload=await sb.storage.from('heritage-media').upload(path,file,{contentType:file.type,upsert:false});
+    if(upload.error){ showToast('Image upload failed: '+upload.error.message); return; }
+    image_url=sb.storage.from('heritage-media').getPublicUrl(path).data.publicUrl;
+  }
+  const payload={user_id:currentUser.id, heritage_name:name, category, location, description, risk_score:risk, image_url, status:'pending', metadata:{pin:pinCoord, dialect:window._lastDialect || null}};
+  const {data,error}=await sb.from('submissions').insert(payload).select().single();
+  if(error){ showToast('Could not submit: '+error.message); return; }
+  showToast(`"${name}" submitted for review. Reference #${data.id}.`);
+  step=1; showStep(1);
+  document.getElementById('f_name').value=''; document.getElementById('f_location').value=''; document.getElementById('f_desc').value='';
+};
+
+const originalPhotoInput = document.getElementById('photoFile');
+if(originalPhotoInput){
+  originalPhotoInput.addEventListener('change', async ()=>{
+    const file=originalPhotoInput.files?.[0];
+    if(!file) return;
+    if(file.size>6*1024*1024){ showToast('Please choose an image under 6 MB.'); originalPhotoInput.value=''; return; }
+    uploads.photo=true;
+    document.getElementById('photo_status').textContent=file.name;
+    document.getElementById('photo_status').classList.add('text-teal','font-semibold');
+    window._selectedPhoto=file;
+  });
+}
+
+initSupabase();
+const heroPhoto=document.getElementById('heroPhoto'); if(heroPhoto) heroPhoto.style.backgroundImage=`url("${IMAGE_ASSETS.hero}")`;
+renderMap();
+
+/* ============ STAT COUNTERS ============ */
+const counters = document.querySelectorAll('[data-count]');
+let countersStarted = false;
+function animateCounters(){
+  if(countersStarted) return; countersStarted = true;
+  counters.forEach(el=>{
+    const target = +el.dataset.count;
+    const start = performance.now();
+    const dur = 1400;
+    function tick(now){
+      const p = Math.min(1, (now-start)/dur);
+      const val = Math.floor(p * target);
+      el.textContent = val.toLocaleString() + (p>=1 && target>=100 ? '+' : '');
+      if(p<1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  });
+}
+const heroObserver = new IntersectionObserver(entries=>{
+  if(entries[0].isIntersecting) animateCounters();
+}, {threshold:.4});
+heroObserver.observe(document.querySelector('[data-count]').closest('.grid'));
+</script>
+</body>
+</html>
